@@ -4,11 +4,10 @@
     android:layout_height="match_parent"
     android:orientation="vertical" >
 
-    <Button
-        android:id="@+id/flagment_btn"
+    <ListView
+        android:id="@+id/main_listview"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:onClick="doClick"
-        android:text="Button" />
+        android:layout_height="wrap_content" >
+    </ListView>
 
 </LinearLayout>
