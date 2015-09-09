@@ -1,11 +1,17 @@
-package com.liuyunlong.androiddemo;
+package com.liuyunlong.androiddemo.activity;
 
-import android.annotation.SuppressLint;
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Toast;
 
+import com.liuyunlong.androiddemo.R;
+
+/**
+ * 之界面
+ * @author liuyunlong
+ *2015-9-9 上午9:59:45
+ */
 public class MainActivity extends Activity {
 
 	@Override
@@ -14,11 +20,11 @@ public class MainActivity extends Activity {
 		setContentView(R.layout.main);
 	}
 
-	@SuppressLint("ShowToast")
 	public void doClick(View v) {
 		switch (v.getId()) {
 		case R.id.flagment_btn:
-			Toast.makeText(this, "哈哈", Toast.LENGTH_SHORT).show();
+			Intent intent = new Intent(this, FragmentActivity.class);
+			startActivity(intent);
 			break;
 
 		default:
