@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="main_title_list">
+        <item>定时任务</item>
+        <item>title 2</item>
+        <item>title 3</item>
+    </string-array>
+    <string-array name="main_brief_list">
+        <item>每隔一段时间执行，条件满足后退出</item>
+        <item>brief 2</item>
+        <item>brief 3</item>
+    </string-array>
+
+</resources>

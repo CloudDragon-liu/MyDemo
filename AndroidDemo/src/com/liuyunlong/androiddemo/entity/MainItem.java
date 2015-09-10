@@ -1,4 +1,4 @@
-package com.liuyunlong.androiddemo.activity.entity;
+package com.liuyunlong.androiddemo.entity;
 
 import java.util.Map;
 
