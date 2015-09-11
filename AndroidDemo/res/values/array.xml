@@ -3,7 +3,7 @@
 
     <string-array name="main_title_list">
         <item>定时任务</item>
-        <item>title 2</item>
+        <item>ViewPage实现Tab</item>
         <item>title 3</item>
     </string-array>
     <string-array name="main_brief_list">
