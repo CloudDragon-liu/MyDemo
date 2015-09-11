@@ -5,13 +5,18 @@ import java.util.List;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ListView;
 
 import com.liuyunlong.androiddemo.R;
 import com.liuyunlong.androiddemo.adpter.MainListViewAdapter;
 import com.liuyunlong.androiddemo.entity.MainItem;
+import com.liuyunlong.androiddemo.utils.ConstantUtils;
 
 /**
  * 之界面
@@ -53,7 +58,7 @@ public class MainActivity extends Activity {
 				MainItem item = new MainItem();
 				item.setTitle(mainTiStrings[i]);
 				item.setBrief(mainBriefStrings[i]);
-				item.setBitmap(BitmapFactory.decodeResource(mContext.getResources(), R.drawable.ic_launcher));
+				item.setBitmap(BitmapFactory.decodeResource(mContext.getResources(), R.drawable.main_item_icon));
 				mainItems.add(item);
 			}
 		}
@@ -69,5 +74,27 @@ public class MainActivity extends Activity {
 		listView = (ListView) this.findViewById(R.id.main_listview);
 		adapter = new MainListViewAdapter(mContext, mainItems);
 		listView.setAdapter(adapter);
+		listView.setOnItemClickListener(new OnItemClickListener() {
+
+			@Override
+			public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+				switch (position) {
+				case ConstantUtils.NUMBER.ZERO:
+					Intent intent = new Intent(mContext, HandlerActivity.class);
+					intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+					startActivity(intent);
+					break;
+				case ConstantUtils.NUMBER.ONE:
+
+					break;
+				case ConstantUtils.NUMBER.TWO:
+
+					break;
+
+				default:
+					break;
+				}
+			}
+		});
 	}
 }

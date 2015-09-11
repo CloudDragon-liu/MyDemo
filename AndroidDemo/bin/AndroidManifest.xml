@@ -22,7 +22,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="com.liuyunlong.androiddemo.activity.FragmentActivity" >
+        <activity android:name="com.liuyunlong.androiddemo.activity.HandlerActivity" >
         </activity>
     </application>
 
