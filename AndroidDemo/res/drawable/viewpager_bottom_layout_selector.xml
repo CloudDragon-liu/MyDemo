@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- 选中时图片 -->
+    <item android:drawable="@drawable/main_tab_equ_sel" android:state_pressed="true"/>
+    <!-- 选中时效果 -->
+    <item android:drawable="@drawable/main_tab_equ_sel" android:state_selected="true"/>
+    <!-- 未选中时图片 -->
+    <item android:drawable="@drawable/main_tab_equ_nor" android:state_checked="false"/>
+
+</selector>

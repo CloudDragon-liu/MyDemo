@@ -2,13 +2,13 @@
 
     <!--
         Base application theme, dependent on API level. This theme is replaced
-        by AppBaseTheme from res/values-vXX/styles.xml on newer devices.
+        by AppBaseTheme from res/values-vXX/styles.xml on newer devices.
     -->
     <style name="AppBaseTheme" parent="android:Theme.Light">
         <!--
             Theme customizations available in newer API levels can go in
             res/values-vXX/styles.xml, while customizations related to
-            backward-compatibility can go here.
+            backward-compatibility can go here.
         -->
     </style>
 
@@ -23,6 +23,17 @@
 
     <style name="main_listview_layout_style">
         <item name="android:background">#FFFFFF</item>
+    </style>
+
+    <style name="viewpager_bottom_text">
+        <item name="android:textSize">12sp</item>
+        <item name="android:paddingTop">3dp</item>
+        <item name="android:paddingBottom">3dp</item>
+        <item name="android:textColor">#CDCDCD</item>
+    </style>
+
+    <style name="viewpager_bottom_imageview">
+        <item name="android:padding">0dp</item>
     </style>
 
 </resources>

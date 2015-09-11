@@ -84,8 +84,10 @@ public class MainActivity extends Activity {
 					intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
 					startActivity(intent);
 					break;
-				case ConstantUtils.NUMBER.ONE:
-
+				case ConstantUtils.NUMBER.ONE: // ViewPager实现Tab页效果
+					Intent intent2 = new Intent(mContext, ViewPagerActivity.class);
+					intent2.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+					startActivity(intent2);
 					break;
 				case ConstantUtils.NUMBER.TWO:
 

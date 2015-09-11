@@ -44,20 +44,47 @@ public final class R {
         public static final int ic_launcher=0x7f020000;
         public static final int main_item_icon=0x7f020001;
         public static final int main_item_selector=0x7f020002;
+        public static final int main_tab_equ_nor=0x7f020003;
+        public static final int main_tab_equ_sel=0x7f020004;
+        public static final int main_tab_fam_nor=0x7f020005;
+        public static final int main_tab_fam_sel=0x7f020006;
+        public static final int main_tab_hel_nor=0x7f020007;
+        public static final int main_tab_hel_sel=0x7f020008;
+        public static final int main_tab_mall_nor=0x7f020009;
+        public static final int main_tab_mall_sel=0x7f02000a;
+        public static final int tab_bottom_bar=0x7f02000b;
+        public static final int tab_top_bar=0x7f02000c;
+        public static final int viewpager_bottom_layout_selector=0x7f02000d;
     }
     public static final class id {
-        public static final int action_settings=0x7f0a0006;
+        public static final int action_settings=0x7f0a0013;
         public static final int handler_begin_btn=0x7f0a0000;
         public static final int handler_count_btn=0x7f0a0001;
         public static final int main_item_brief_tv=0x7f0a0005;
         public static final int main_item_iv=0x7f0a0003;
         public static final int main_item_title_tv=0x7f0a0004;
         public static final int main_listview=0x7f0a0002;
+        public static final int main_tab1_iv=0x7f0a0007;
+        public static final int main_tab1_tv=0x7f0a0008;
+        public static final int main_tab2_iv=0x7f0a000a;
+        public static final int main_tab2_tv=0x7f0a000b;
+        public static final int main_tab3_iv=0x7f0a000d;
+        public static final int main_tab3_tv=0x7f0a000e;
+        public static final int main_tab4_iv=0x7f0a0010;
+        public static final int main_tab4_tv=0x7f0a0011;
+        public static final int tab_equ_layout=0x7f0a0006;
+        public static final int tab_fam_layout=0x7f0a000f;
+        public static final int tab_hel_layout=0x7f0a000c;
+        public static final int tab_mall_layout=0x7f0a0009;
+        public static final int viewpager_content=0x7f0a0012;
     }
     public static final class layout {
         public static final int handler=0x7f030000;
         public static final int main=0x7f030001;
         public static final int main_item_view=0x7f030002;
+        public static final int tab_viewpager_bottom=0x7f030003;
+        public static final int tab_viewpager_main=0x7f030004;
+        public static final int tab_viewpager_top=0x7f030005;
     }
     public static final class menu {
         public static final int main=0x7f090000;
@@ -77,11 +104,29 @@ public final class R {
 
 
 
+
+
+
+
+
+
+
+
+
     
 
             Theme customizations available in newer API levels can go in
             res/values-vXX/styles.xml, while customizations related to
             backward-compatibility can go here.
+
+
+
+
+
+
+
+
+
 
 
 
@@ -108,5 +153,7 @@ public final class R {
         public static final int AppTheme=0x7f080001;
         public static final int main_background_style=0x7f080002;
         public static final int main_listview_layout_style=0x7f080003;
+        public static final int viewpager_bottom_imageview=0x7f080005;
+        public static final int viewpager_bottom_text=0x7f080004;
     }
 }

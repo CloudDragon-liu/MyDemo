@@ -22,8 +22,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="com.liuyunlong.androiddemo.activity.HandlerActivity" >
-        </activity>
+        <activity android:name="com.liuyunlong.androiddemo.activity.HandlerActivity" />
+        <activity android:name="com.liuyunlong.androiddemo.activity.ViewPagerActivity" />
     </application>
 
 </manifest>
