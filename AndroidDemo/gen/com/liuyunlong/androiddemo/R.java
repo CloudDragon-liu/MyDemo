@@ -17,6 +17,8 @@ public final class R {
     public static final class color {
         public static final int black=0x7f050001;
         public static final int gray_level_4=0x7f050002;
+        public static final int main_tab_text_normal=0x7f050004;
+        public static final int main_tab_text_select=0x7f050003;
         public static final int white=0x7f050000;
     }
     public static final class dimen {
@@ -57,9 +59,10 @@ public final class R {
         public static final int viewpager_bottom_layout_selector=0x7f02000d;
     }
     public static final class id {
-        public static final int action_settings=0x7f0a0013;
+        public static final int action_settings=0x7f0a0014;
         public static final int handler_begin_btn=0x7f0a0000;
         public static final int handler_count_btn=0x7f0a0001;
+        public static final int main_head_tv=0x7f0a0013;
         public static final int main_item_brief_tv=0x7f0a0005;
         public static final int main_item_iv=0x7f0a0003;
         public static final int main_item_title_tv=0x7f0a0004;

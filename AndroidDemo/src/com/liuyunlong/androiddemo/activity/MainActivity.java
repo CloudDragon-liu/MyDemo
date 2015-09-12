@@ -9,7 +9,9 @@ import android.content.Intent;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.view.View;
+import android.view.Window;
 import android.widget.AdapterView;
+import android.widget.TextView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ListView;
 
@@ -31,6 +33,8 @@ public class MainActivity extends Activity {
 
 	private MainListViewAdapter adapter;
 
+	private TextView mainHeadTV;
+
 	private List<MainItem> mainItems = new ArrayList<MainItem>();
 
 	private String[] mainTiStrings, mainBriefStrings;
@@ -38,6 +42,7 @@ public class MainActivity extends Activity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+		requestWindowFeature(Window.FEATURE_NO_TITLE);
 		setContentView(R.layout.main);
 		mContext = this;
 		initData();
@@ -71,6 +76,8 @@ public class MainActivity extends Activity {
 	 * @date 2015-9-9下午8:57:56
 	 */
 	private void initView() {
+		mainHeadTV = (TextView) this.findViewById(R.id.main_head_tv);
+		mainHeadTV.setText("学习记录");
 		listView = (ListView) this.findViewById(R.id.main_listview);
 		adapter = new MainListViewAdapter(mContext, mainItems);
 		listView.setAdapter(adapter);

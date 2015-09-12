@@ -5,6 +5,8 @@
     android:layout_height="match_parent"
     android:orientation="vertical" >
 
+    <include layout="@layout/tab_viewpager_top" />
+
     <ListView
         android:id="@+id/main_listview"
         style="@style/main_listview_layout_style"

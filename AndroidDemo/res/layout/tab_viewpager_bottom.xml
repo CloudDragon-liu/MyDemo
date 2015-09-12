@@ -18,14 +18,15 @@
             style="@style/viewpager_bottom_imageview"
             android:layout_width="20dp"
             android:layout_height="20dp"
-            android:src="@drawable/main_tab_equ_nor" />
+            android:src="@drawable/main_tab_equ_sel" />
 
         <TextView
             android:id="@+id/main_tab1_tv"
             style="@style/viewpager_bottom_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="设备" />
+            android:text="设备"
+            android:textColor="#1DCAAC" />
     </LinearLayout>
 
     <LinearLayout
