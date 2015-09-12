@@ -3,13 +3,13 @@
 
     <string-array name="main_title_list">
         <item>定时任务</item>
+        <item>Fragment</item>
         <item>ViewPage实现Tab</item>
-        <item>title 3</item>
     </string-array>
     <string-array name="main_brief_list">
         <item>每隔一段时间执行，条件满足后退出</item>
-        <item>brief 2</item>
-        <item>brief 3</item>
+        <item>Fragment基础：拥有自己独立的布局和生命周期，可以将Fragment定义到多个Activity中</item>
+        <item>使用ViewPager实现Tab效果</item>
     </string-array>
 
 </resources>
