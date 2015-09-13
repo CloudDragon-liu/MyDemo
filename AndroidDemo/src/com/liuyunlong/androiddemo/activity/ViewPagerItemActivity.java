@@ -2,7 +2,6 @@ package com.liuyunlong.androiddemo.activity;
 
 import java.util.ArrayList;
 import java.util.List;
-
 import android.app.Activity;
 import android.os.Bundle;
 import android.support.v4.view.ViewPager;
@@ -13,16 +12,15 @@ import android.view.Window;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-
 import com.liuyunlong.androiddemo.R;
 import com.liuyunlong.androiddemo.adpter.ViewPagerAdapter;
 import com.liuyunlong.androiddemo.utils.ConstantUtils;
 
 /** 
  * ViewPager实现app的Tab效果
-* @author  : liuyunlong
-* @version ：2015-9-11 下午7:16:34 
-* */
+ * @author  : liuyunlong
+ * @version ：2015-9-11 下午7:16:34 
+ * */
 public class ViewPagerItemActivity extends Activity implements OnClickListener, OnPageChangeListener {
 
 	private ViewPager viewPager;

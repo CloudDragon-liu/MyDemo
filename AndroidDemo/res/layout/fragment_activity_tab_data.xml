@@ -4,15 +4,10 @@
     android:layout_height="match_parent"
     android:orientation="vertical" >
 
-    <Button
-        android:id="@+id/my_fragment_btn"
+    <fragment
+        android:id="@+id/myfragment_data"
+        android:name="com.liuyunlong.androiddemo.fragment.MyFragment"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
-
-    <TextView
-        android:id="@+id/my_fragment_text"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:lineSpacingMultiplier="1.5" />
 
 </LinearLayout>

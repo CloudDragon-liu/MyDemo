@@ -2,7 +2,6 @@ package com.liuyunlong.androiddemo.activity;
 
 import java.util.ArrayList;
 import java.util.List;
-
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
@@ -14,16 +13,15 @@ import android.widget.AdapterView;
 import android.widget.TextView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ListView;
-
 import com.liuyunlong.androiddemo.R;
 import com.liuyunlong.androiddemo.adpter.MainListViewAdapter;
 import com.liuyunlong.androiddemo.entity.MainItem;
 import com.liuyunlong.androiddemo.utils.ConstantUtils;
 
 /**
- * 之界面
+ * 主界面
  * @author liuyunlong
- *2015-9-9 上午9:59:45
+ * 2015-9-9 上午9:59:45
  */
 public class MainActivity extends Activity {
 
