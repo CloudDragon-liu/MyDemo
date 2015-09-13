@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="55dp"
+    android:background="@drawable/tab_bottom_bar"
+    android:orientation="horizontal" >
+
+    <LinearLayout
+        android:id="@+id/fragment_tab_1_layout"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:orientation="vertical" >
+
+        <ImageView
+            android:id="@+id/fragment_tab_1_iv"
+            style="@style/viewpager_bottom_imageview"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:src="@drawable/main_tab_equ_sel" />
+
+        <TextView
+            android:id="@+id/fragment_tab_1_tv"
+            style="@style/viewpager_bottom_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="静态加载"
+            android:textColor="#1DCAAC" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/fragment_tab_2_layout"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:orientation="vertical" >
+
+        <ImageView
+            android:id="@+id/fragment_tab_2_iv"
+            style="@style/viewpager_bottom_imageview"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:src="@drawable/main_tab_mall_nor" />
+
+        <TextView
+            android:id="@+id/fragment_tab_2_tv"
+            style="@style/viewpager_bottom_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="动态加载" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/fragment_tab_3_layout"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:orientation="vertical" >
+
+        <ImageView
+            android:id="@+id/fragment_tab_3_iv"
+            style="@style/viewpager_bottom_imageview"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:src="@drawable/main_tab_hel_nor" />
+
+        <TextView
+            android:id="@+id/fragment_tab_3_tv"
+            style="@style/viewpager_bottom_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="健康" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/fragment_tab_4_layout"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:orientation="vertical" >
+
+        <ImageView
+            android:id="@+id/fragment_tab_4_iv"
+            style="@style/viewpager_bottom_imageview"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:src="@drawable/main_tab_fam_nor" />
+
+        <TextView
+            android:id="@+id/fragment_tab_4_tv"
+            style="@style/viewpager_bottom_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="亲情" />
+    </LinearLayout>
+
+</LinearLayout>

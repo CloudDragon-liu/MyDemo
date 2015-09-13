@@ -23,7 +23,7 @@ import com.liuyunlong.androiddemo.utils.ConstantUtils;
 * @author  : liuyunlong
 * @version ：2015-9-11 下午7:16:34 
 * */
-public class ViewPagerActivity extends Activity implements OnClickListener, OnPageChangeListener {
+public class ViewPagerItemActivity extends Activity implements OnClickListener, OnPageChangeListener {
 
 	private ViewPager viewPager;
 	private LinearLayout tab_1_layout, tab_2_layout, tab_3_layout, tab_4_layout;
@@ -37,7 +37,7 @@ public class ViewPagerActivity extends Activity implements OnClickListener, OnPa
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		requestWindowFeature(Window.FEATURE_NO_TITLE);
-		setContentView(R.layout.tab_viewpager_main);
+		setContentView(R.layout.viewpager_activity_main);
 		initView();
 	}
 

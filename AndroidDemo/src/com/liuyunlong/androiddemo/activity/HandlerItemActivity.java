@@ -13,7 +13,7 @@ import com.liuyunlong.androiddemo.R;
 * @author  : liuyunlong
 * @version ：2015-9-11 下午5:12:54 
 * */
-public class HandlerActivity extends Activity {
+public class HandlerItemActivity extends Activity {
 
 	private Integer count = 0;
 
@@ -37,7 +37,7 @@ public class HandlerActivity extends Activity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.handler);
+		setContentView(R.layout.handler_item);
 		initView();
 	}
 

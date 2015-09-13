@@ -22,8 +22,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="com.liuyunlong.androiddemo.activity.HandlerActivity" />
-        <activity android:name="com.liuyunlong.androiddemo.activity.ViewPagerActivity" />
+        <activity android:name="com.liuyunlong.androiddemo.activity.HandlerItemActivity" />
+        <activity android:name="com.liuyunlong.androiddemo.activity.ViewPagerItemActivity" />
+        <activity android:name="com.liuyunlong.androiddemo.activity.FragmentItemActivity" />
     </application>
 
 </manifest>

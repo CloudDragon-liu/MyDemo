@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical" >
 
-    <include layout="@layout/tab_viewpager_top" />
+    <include layout="@layout/viewpager_activity_top" />
 
     <ListView
         android:id="@+id/main_listview"

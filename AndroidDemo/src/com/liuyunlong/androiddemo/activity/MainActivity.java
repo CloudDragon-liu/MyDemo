@@ -87,15 +87,16 @@ public class MainActivity extends Activity {
 			public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 				switch (position) {
 				case ConstantUtils.NUMBER.ZERO:
-					Intent intent = new Intent(mContext, HandlerActivity.class);
+					Intent intent = new Intent(mContext, HandlerItemActivity.class);
 					intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
 					startActivity(intent);
 					break;
-				case ConstantUtils.NUMBER.ONE: // ViewPager实现Tab页效果
-
+				case ConstantUtils.NUMBER.ONE: // Fragment
+					Intent intentFrag = new Intent(mContext, FragmentItemActivity.class);
+					startActivity(intentFrag);
 					break;
-				case ConstantUtils.NUMBER.TWO:
-					Intent intent2 = new Intent(mContext, ViewPagerActivity.class);
+				case ConstantUtils.NUMBER.TWO: // ViewPager实现Tab页效果
+					Intent intent2 = new Intent(mContext, ViewPagerItemActivity.class);
 					intent2.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
 					startActivity(intent2);
 					break;
