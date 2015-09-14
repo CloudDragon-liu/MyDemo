@@ -13,6 +13,7 @@ import android.support.v4.view.ViewPager.OnPageChangeListener;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.Window;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -20,6 +21,7 @@ import android.widget.TextView;
 import com.liuyunlong.androiddemo.R;
 import com.liuyunlong.androiddemo.adpter.ViewPagerAdapter;
 import com.liuyunlong.androiddemo.fragment.FragmentDynamic;
+import com.liuyunlong.androiddemo.fragment.FragmentLife1;
 import com.liuyunlong.androiddemo.utils.ConstantUtils;
 
 /**
@@ -48,6 +50,8 @@ public class FragmentItemActivity extends Activity implements OnClickListener, O
 
 	/**fragment viewpager adapter*/
 	private ViewPagerAdapter adapter;
+
+	private Button button;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -87,6 +91,8 @@ public class FragmentItemActivity extends Activity implements OnClickListener, O
 		View view1 = View.inflate(mContext, R.layout.fragment_activity_tab_static, null);
 		View view2 = View.inflate(mContext, R.layout.fragment_activity_tab_dynamic, null);
 		View view3 = View.inflate(mContext, R.layout.fragment_activity_tab_life, null);
+		button = (Button) view3.findViewById(R.id.fragment_life_btn);
+		button.setOnClickListener(this);
 		View view4 = View.inflate(mContext, R.layout.fragment_activity_tab_data, null);
 		views.add(view1);
 		views.add(view2);
@@ -124,6 +130,8 @@ public class FragmentItemActivity extends Activity implements OnClickListener, O
 			fragmentTabTv4.setTextColor(getResources().getColor(R.color.main_tab_text_select));
 			fragmentTabHeadTv.setText("数据传递");
 			break;
+		case R.id.fragment_life_btn:
+			break;
 
 		default:
 			break;
@@ -136,11 +144,21 @@ public class FragmentItemActivity extends Activity implements OnClickListener, O
 	 * @author liuyunlong
 	 * @date 2015-9-14上午9:50:31
 	 */
-	private void dynamicAddFragment() {
+	private void addFragmentDynamic() {
 		FragmentDynamic fragmentDynamic = new FragmentDynamic();
 		FragmentManager manager = getFragmentManager();
 		FragmentTransaction beginTransaction = manager.beginTransaction();
 		beginTransaction.add(R.id.fragment_dynamic_layout, fragmentDynamic);
+		beginTransaction.addToBackStack(null);
+		beginTransaction.commit();
+
+	}
+
+	private void addFragmentLife() {
+		FragmentLife1 FragmentLife1 = new FragmentLife1();
+		FragmentManager manager = getFragmentManager();
+		FragmentTransaction beginTransaction = manager.beginTransaction();
+		beginTransaction.add(R.id.fragment_life_layout, FragmentLife1);
 		beginTransaction.addToBackStack(null);
 		beginTransaction.commit();
 
@@ -180,12 +198,13 @@ public class FragmentItemActivity extends Activity implements OnClickListener, O
 			fragmentTabHeadTv.setText("静态加载");
 			break;
 		case ConstantUtils.NUMBER.ONE:
-			dynamicAddFragment();
+			addFragmentDynamic();
 			fragmentTabIv2.setImageResource(R.drawable.fragment_tab_2_sel);
 			fragmentTabTv2.setTextColor(getResources().getColor(R.color.main_tab_text_select));
 			fragmentTabHeadTv.setText("动态加载");
 			break;
 		case ConstantUtils.NUMBER.TWO:
+			// addFragmentLife();
 			fragmentTabIv3.setImageResource(R.drawable.fragment_tab_3_sel);
 			fragmentTabTv3.setTextColor(getResources().getColor(R.color.main_tab_text_select));
 			fragmentTabHeadTv.setText("生命周期");
