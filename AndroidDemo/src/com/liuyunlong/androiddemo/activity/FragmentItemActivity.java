@@ -2,13 +2,10 @@ package com.liuyunlong.androiddemo.activity;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.zip.Inflater;
-
-import com.liuyunlong.androiddemo.R;
-import com.liuyunlong.androiddemo.adpter.ViewPagerAdapter;
-import com.liuyunlong.androiddemo.utils.ConstantUtils;
 
 import android.app.Activity;
+import android.app.FragmentManager;
+import android.app.FragmentTransaction;
 import android.content.Context;
 import android.os.Bundle;
 import android.support.v4.view.ViewPager;
@@ -16,10 +13,14 @@ import android.support.v4.view.ViewPager.OnPageChangeListener;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.Window;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+
+import com.liuyunlong.androiddemo.R;
+import com.liuyunlong.androiddemo.adpter.ViewPagerAdapter;
+import com.liuyunlong.androiddemo.fragment.FragmentDynamic;
+import com.liuyunlong.androiddemo.utils.ConstantUtils;
 
 /**
  *  @author liuyunlong
@@ -100,21 +101,25 @@ public class FragmentItemActivity extends Activity implements OnClickListener, O
 		set2Normal();
 		switch (view.getId()) {
 		case R.id.fragment_tab_1_layout:
+			viewPager.setCurrentItem(ConstantUtils.NUMBER.ZERO);
 			fragmentTabIv1.setImageResource(R.drawable.fragment_tab_1_sel);
 			fragmentTabTv1.setTextColor(getResources().getColor(R.color.main_tab_text_select));
 			fragmentTabHeadTv.setText("静态加载");
 			break;
 		case R.id.fragment_tab_2_layout:
+			viewPager.setCurrentItem(ConstantUtils.NUMBER.ONE);
 			fragmentTabIv2.setImageResource(R.drawable.fragment_tab_2_sel);
 			fragmentTabTv2.setTextColor(getResources().getColor(R.color.main_tab_text_select));
 			fragmentTabHeadTv.setText("动态加载");
 			break;
 		case R.id.fragment_tab_3_layout:
+			viewPager.setCurrentItem(ConstantUtils.NUMBER.TWO);
 			fragmentTabIv3.setImageResource(R.drawable.fragment_tab_3_sel);
 			fragmentTabTv3.setTextColor(getResources().getColor(R.color.main_tab_text_select));
 			fragmentTabHeadTv.setText("生命周期");
 			break;
 		case R.id.fragment_tab_4_layout:
+			viewPager.setCurrentItem(ConstantUtils.NUMBER.THREE);
 			fragmentTabIv4.setImageResource(R.drawable.fragment_tab_4_sel);
 			fragmentTabTv4.setTextColor(getResources().getColor(R.color.main_tab_text_select));
 			fragmentTabHeadTv.setText("数据传递");
@@ -123,6 +128,22 @@ public class FragmentItemActivity extends Activity implements OnClickListener, O
 		default:
 			break;
 		}
+	}
+
+	/**
+	 * 动态加载fragment
+	 * 
+	 * @author liuyunlong
+	 * @date 2015-9-14上午9:50:31
+	 */
+	private void dynamicAddFragment() {
+		FragmentDynamic fragmentDynamic = new FragmentDynamic();
+		FragmentManager manager = getFragmentManager();
+		FragmentTransaction beginTransaction = manager.beginTransaction();
+		beginTransaction.add(R.id.fragment_dynamic_layout, fragmentDynamic);
+		beginTransaction.addToBackStack(null);
+		beginTransaction.commit();
+
 	}
 
 	/**
@@ -159,6 +180,7 @@ public class FragmentItemActivity extends Activity implements OnClickListener, O
 			fragmentTabHeadTv.setText("静态加载");
 			break;
 		case ConstantUtils.NUMBER.ONE:
+			dynamicAddFragment();
 			fragmentTabIv2.setImageResource(R.drawable.fragment_tab_2_sel);
 			fragmentTabTv2.setTextColor(getResources().getColor(R.color.main_tab_text_select));
 			fragmentTabHeadTv.setText("动态加载");

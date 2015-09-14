@@ -68,6 +68,7 @@ public final class R {
     }
     public static final class id {
         public static final int action_settings=0x7f0a0028;
+        public static final int fragment_dynamic_layout=0x7f0a000e;
         public static final int fragment_head_tv=0x7f0a0011;
         public static final int fragment_tab_1_iv=0x7f0a0001;
         public static final int fragment_tab_1_layout=0x7f0a0000;
@@ -100,7 +101,6 @@ public final class R {
         public static final int my_fragment_btn=0x7f0a0018;
         public static final int my_fragment_text=0x7f0a0019;
         public static final int myfragment_data=0x7f0a000d;
-        public static final int myfragment_dynamic=0x7f0a000e;
         public static final int myfragment_life=0x7f0a000f;
         public static final int myfragment_static=0x7f0a0010;
         public static final int tab_equ_layout=0x7f0a001a;
@@ -136,6 +136,7 @@ public final class R {
     public static final class string {
         public static final int action_settings=0x7f070001;
         public static final int app_name=0x7f070000;
+        public static final int fragment_dynamic_text=0x7f070004;
         public static final int fragment_static_text=0x7f070003;
         public static final int hello_world=0x7f070002;
     }

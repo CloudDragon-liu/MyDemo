@@ -6,7 +6,7 @@
 
     <fragment
         android:id="@+id/myfragment_static"
-        android:name="com.liuyunlong.androiddemo.fragment.MyFragment"
+        android:name="com.liuyunlong.androiddemo.fragment.FragmentStatic"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 

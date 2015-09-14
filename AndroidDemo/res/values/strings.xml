@@ -9,5 +9,6 @@
         该fragment可被应用到任何布局中，其中的控件和事件不变，
         注意：在宿主的视图文件中引用静态加载fragment时需要给一个唯一的标识，ID或name都可以，
         另外，在宿主文件中可以直接访问fragment中的控件</string>
+    <string name="fragment_dynamic_text">动态加载：通过fragment管理器和事物进行在代码中添加管理fragment，操作类似操作数据库，最后都需要commit，如果在commit之前加上addToBackStack,会清空当前的fragment</string>
 
 </resources>

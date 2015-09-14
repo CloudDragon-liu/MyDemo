@@ -4,10 +4,11 @@
     android:layout_height="match_parent"
     android:orientation="vertical" >
 
-    <fragment
-        android:id="@+id/myfragment_dynamic"
-        android:name="com.liuyunlong.androiddemo.fragment.MyFragment"
+    <LinearLayout
+        android:id="@+id/fragment_dynamic_layout"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
+    </LinearLayout>
 
 </LinearLayout>

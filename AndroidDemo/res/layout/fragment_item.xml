@@ -5,7 +5,7 @@
     android:orientation="vertical" >
 
     <fragment
-        android:name="com.liuyunlong.androiddemo.fragment.MyFragment"
+        android:name="com.liuyunlong.androiddemo.fragment.FragmentStatic"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
 
