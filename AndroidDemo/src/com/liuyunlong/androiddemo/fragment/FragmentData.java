@@ -1,8 +1,5 @@
 package com.liuyunlong.androiddemo.fragment;
 
-import com.liuyunlong.androiddemo.R;
-import com.liuyunlong.androiddemo.utils.Logger;
-
 import android.app.Activity;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -11,6 +8,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.liuyunlong.androiddemo.R;
+import com.liuyunlong.androiddemo.utils.Logger;
+
 /** 
 * @author  : liuyunlong
 * @version ：2015-9-15 上午10:12:09 
@@ -18,8 +18,6 @@ import android.widget.TextView;
 public class FragmentData extends Fragment {
 
 	private TextView textView;
-
-	private String string = "response Activity";
 
 	private MyListener listener;
 

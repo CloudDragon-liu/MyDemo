@@ -17,6 +17,7 @@ import com.liuyunlong.androiddemo.R;
 import com.liuyunlong.androiddemo.adpter.MainListViewAdapter;
 import com.liuyunlong.androiddemo.entity.MainItem;
 import com.liuyunlong.androiddemo.utils.ConstantUtils;
+import com.liuyunlong.androiddemo.utils.Logger;
 
 /**
  * 主界面
@@ -102,6 +103,16 @@ public class MainActivity extends Activity {
 					Intent fragmentIntent = new Intent(mContext, FragmentTabItemActivity.class);
 					fragmentIntent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
 					startActivity(fragmentIntent);
+					break;
+				case ConstantUtils.NUMBER.FOUR: // FragmentPagerAdapter+
+												// viewPager实现Tab页效果
+					Intent fragmentAdapterIntent = new Intent(mContext, FragmentPagerAdapterTabActivity.class);
+					fragmentAdapterIntent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+					startActivity(fragmentAdapterIntent);
+					break;
+				case ConstantUtils.NUMBER.FIVE: // ViewPagerIndicator
+												// +viewPager实现Tab页效果
+					Logger.showToast(mContext, "devoloping...");
 					break;
 
 				default:
