@@ -8,6 +8,7 @@
         <item>Fragment实现Tab</item>
         <item>FragmentPagerAdapter + viewPager实现Tab</item>
         <item>ViewPagerIndicator + viewPager实现Tab</item>
+        <item>FragmenTabHost</item>
     </string-array>
     <string-array name="main_brief_list">
         <item>每隔一段时间执行，条件满足后退出</item>
@@ -16,6 +17,13 @@
         <item>使用Fragment实现Tab效果，每个Tab为一个Fragment</item>
         <item>FragmentPagerAdapter + viewPager实现Tab</item>
         <item>ViewPagerIndicator 为一个第三方的开源框架</item>
+        <item>FragmentTabHost实现Tab效果</item>
+    </string-array>
+    <string-array name="main_tab_text">
+        <item>学习记录</item>
+        <item>家庭相册</item>
+        <item>美图欣赏</item>
+        <item>家庭互动</item>
     </string-array>
 
 </resources>

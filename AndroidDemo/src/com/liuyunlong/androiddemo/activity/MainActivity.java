@@ -116,6 +116,11 @@ public class MainActivity extends Activity {
 												// +viewPager实现Tab页效果
 					Logger.showToast(mContext, "devoloping...");
 					break;
+				case ConstantUtils.NUMBER.SIX: // FragmentTabHost
+					intent.setClass(mContext, MainTabActivity.class);
+					intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+					startActivity(intent);
+					break;
 
 				default:
 					break;
