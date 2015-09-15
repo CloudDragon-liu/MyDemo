@@ -7,6 +7,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
+import android.support.v4.app.FragmentTabHost;
 import android.view.View;
 import android.view.Window;
 import android.widget.AdapterView;
@@ -84,31 +85,32 @@ public class MainActivity extends Activity {
 
 			@Override
 			public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+				Intent intent = new Intent();
 				switch (position) {
 				case ConstantUtils.NUMBER.ZERO:
-					Intent intent = new Intent(mContext, HandlerItemActivity.class);
+					intent.setClass(mContext, HandlerItemActivity.class);
 					intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
 					startActivity(intent);
 					break;
 				case ConstantUtils.NUMBER.ONE: // Fragment
-					Intent intentFrag = new Intent(mContext, FragmentBaseItemActivity.class);
-					startActivity(intentFrag);
+					intent.setClass(mContext, FragmentBaseItemActivity.class);
+					startActivity(intent);
 					break;
 				case ConstantUtils.NUMBER.TWO: // ViewPager实现Tab页效果
-					Intent intent2 = new Intent(mContext, ViewPagerItemActivity.class);
-					intent2.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-					startActivity(intent2);
+					intent.setClass(mContext, ViewPagerItemActivity.class);
+					intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+					startActivity(intent);
 					break;
 				case ConstantUtils.NUMBER.THREE: // Fragment实现Tab页效果
-					Intent fragmentIntent = new Intent(mContext, FragmentTabItemActivity.class);
-					fragmentIntent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-					startActivity(fragmentIntent);
+					intent.setClass(mContext, FragmentTabItemActivity.class);
+					intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+					startActivity(intent);
 					break;
 				case ConstantUtils.NUMBER.FOUR: // FragmentPagerAdapter+
 												// viewPager实现Tab页效果
-					Intent fragmentAdapterIntent = new Intent(mContext, FragmentPagerAdapterTabActivity.class);
-					fragmentAdapterIntent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-					startActivity(fragmentAdapterIntent);
+					intent.setClass(mContext, FragmentPagerAdapterTabActivity.class);
+					intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+					startActivity(intent);
 					break;
 				case ConstantUtils.NUMBER.FIVE: // ViewPagerIndicator
 												// +viewPager实现Tab页效果

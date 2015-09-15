@@ -67,7 +67,7 @@ public final class R {
         public static final int viewpager_bottom_layout_selector=0x7f020015;
     }
     public static final class id {
-        public static final int action_settings=0x7f0a003c;
+        public static final int action_settings=0x7f0a003d;
         public static final int frag_tab_1_img=0x7f0a0019;
         public static final int frag_tab_1_layout=0x7f0a0018;
         public static final int frag_tab_1_text=0x7f0a001a;
@@ -107,27 +107,28 @@ public final class R {
         public static final int fragment_viewpager=0x7f0a000c;
         public static final int handler_begin_btn=0x7f0a0026;
         public static final int handler_count_btn=0x7f0a0027;
-        public static final int main_head_tv=0x7f0a003b;
+        public static final int main_head_tv=0x7f0a003c;
         public static final int main_item_brief_tv=0x7f0a002b;
         public static final int main_item_iv=0x7f0a0029;
         public static final int main_item_title_tv=0x7f0a002a;
         public static final int main_listview=0x7f0a0028;
-        public static final int main_tab1_iv=0x7f0a002f;
-        public static final int main_tab1_tv=0x7f0a0030;
-        public static final int main_tab2_iv=0x7f0a0032;
-        public static final int main_tab2_tv=0x7f0a0033;
-        public static final int main_tab3_iv=0x7f0a0035;
-        public static final int main_tab3_tv=0x7f0a0036;
-        public static final int main_tab4_iv=0x7f0a0038;
-        public static final int main_tab4_tv=0x7f0a0039;
-        public static final int my_fragment_btn=0x7f0a002c;
-        public static final int my_fragment_text=0x7f0a002d;
+        public static final int main_tab1_iv=0x7f0a0030;
+        public static final int main_tab1_tv=0x7f0a0031;
+        public static final int main_tab2_iv=0x7f0a0033;
+        public static final int main_tab2_tv=0x7f0a0034;
+        public static final int main_tab3_iv=0x7f0a0036;
+        public static final int main_tab3_tv=0x7f0a0037;
+        public static final int main_tab4_iv=0x7f0a0039;
+        public static final int main_tab4_tv=0x7f0a003a;
+        public static final int my_fragment_btn=0x7f0a002d;
+        public static final int my_fragment_text=0x7f0a002e;
         public static final int myfragment_static=0x7f0a0014;
-        public static final int tab_equ_layout=0x7f0a002e;
-        public static final int tab_fam_layout=0x7f0a0037;
-        public static final int tab_hel_layout=0x7f0a0034;
-        public static final int tab_mall_layout=0x7f0a0031;
-        public static final int viewpager_content=0x7f0a003a;
+        public static final int realtabcontent=0x7f0a002c;
+        public static final int tab_equ_layout=0x7f0a002f;
+        public static final int tab_fam_layout=0x7f0a0038;
+        public static final int tab_hel_layout=0x7f0a0035;
+        public static final int tab_mall_layout=0x7f0a0032;
+        public static final int viewpager_content=0x7f0a003b;
     }
     public static final class layout {
         public static final int fragment_activity_bottom=0x7f030000;
@@ -146,14 +147,15 @@ public final class R {
         public static final int handler_item=0x7f03000d;
         public static final int main=0x7f03000e;
         public static final int main_item_view=0x7f03000f;
-        public static final int my_fragment=0x7f030010;
-        public static final int tab_viewpager_tab1=0x7f030011;
-        public static final int tab_viewpager_tab2=0x7f030012;
-        public static final int tab_viewpager_tab3=0x7f030013;
-        public static final int tab_viewpager_tab4=0x7f030014;
-        public static final int viewpager_activity_bottom=0x7f030015;
-        public static final int viewpager_activity_main=0x7f030016;
-        public static final int viewpager_activity_top=0x7f030017;
+        public static final int main_tab_layout=0x7f030010;
+        public static final int my_fragment=0x7f030011;
+        public static final int tab_viewpager_tab1=0x7f030012;
+        public static final int tab_viewpager_tab2=0x7f030013;
+        public static final int tab_viewpager_tab3=0x7f030014;
+        public static final int tab_viewpager_tab4=0x7f030015;
+        public static final int viewpager_activity_bottom=0x7f030016;
+        public static final int viewpager_activity_main=0x7f030017;
+        public static final int viewpager_activity_top=0x7f030018;
     }
     public static final class menu {
         public static final int main=0x7f090000;
