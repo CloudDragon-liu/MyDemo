@@ -30,6 +30,8 @@
         \nFragment：通过getAguments()接收，可通过getActivity()获取宿主的Activity
         \nFragment -->> Activity
         \n 可通过在Fragment中定义一个接口，在宿主Activity实现该接口，通过这个接口传值
-        \n\n 此外还可通过get和set方法传值，activity中set，在fragment中get</string>
+        \n\n 此外还可通过get和set方法传值，activity中set，在fragment中get	</string>
+    <string name="fragment_tab_text">        fragment实现Tab每个Tab为一个Fragment，内部独立控件响应自己的事件。
+        \n 实现：每次点击都隐藏所有transaction.hide(),具体需要哪一个的时候再transaction.show(),如果为null需要先初始化</string>
 
 </resources>

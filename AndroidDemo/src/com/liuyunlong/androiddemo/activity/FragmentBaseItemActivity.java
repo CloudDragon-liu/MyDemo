@@ -3,11 +3,12 @@ package com.liuyunlong.androiddemo.activity;
 import java.util.ArrayList;
 import java.util.List;
 
-import android.app.Activity;
-import android.app.FragmentManager;
-import android.app.FragmentTransaction;
 import android.content.Context;
 import android.os.Bundle;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentActivity;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.ViewPager;
 import android.support.v4.view.ViewPager.OnPageChangeListener;
 import android.view.View;
@@ -34,7 +35,7 @@ import com.liuyunlong.androiddemo.utils.Logger;
  *  @date 2015-9-13 下午3:23:50 
  *  @version 1.0 
  */
-public class FragmentItemActivity extends Activity implements OnClickListener, OnPageChangeListener, MyListener {
+public class FragmentBaseItemActivity extends FragmentActivity implements OnClickListener, OnPageChangeListener, MyListener {
 
 	private Context mContext;
 
@@ -85,10 +86,12 @@ public class FragmentItemActivity extends Activity implements OnClickListener, O
 		fragmentTablay2.setOnClickListener(this);
 		fragmentTablay3.setOnClickListener(this);
 		fragmentTablay4.setOnClickListener(this);
+
 		fragmentTabIv1 = (ImageView) this.findViewById(R.id.fragment_tab_1_iv);
 		fragmentTabIv2 = (ImageView) this.findViewById(R.id.fragment_tab_2_iv);
 		fragmentTabIv3 = (ImageView) this.findViewById(R.id.fragment_tab_3_iv);
 		fragmentTabIv4 = (ImageView) this.findViewById(R.id.fragment_tab_4_iv);
+
 		fragmentTabTv1 = (TextView) this.findViewById(R.id.fragment_tab_1_tv);
 		fragmentTabTv2 = (TextView) this.findViewById(R.id.fragment_tab_2_tv);
 		fragmentTabTv3 = (TextView) this.findViewById(R.id.fragment_tab_3_tv);
@@ -97,6 +100,7 @@ public class FragmentItemActivity extends Activity implements OnClickListener, O
 
 		viewPager = (ViewPager) this.findViewById(R.id.fragment_viewpager);
 		viewPager.setOnPageChangeListener(this);
+
 		View view1 = View.inflate(mContext, R.layout.fragment_activity_tab_static, null);
 		View view2 = View.inflate(mContext, R.layout.fragment_activity_tab_dynamic, null);
 
@@ -157,9 +161,9 @@ public class FragmentItemActivity extends Activity implements OnClickListener, O
 	 */
 	private void sendData2fragment() {
 
-		FragmentManager manager = getFragmentManager(); // 动态加载Fragment
+		FragmentManager manager = getSupportFragmentManager(); // 动态加载Fragment
 		FragmentTransaction transaction = manager.beginTransaction();
-		FragmentData fragmentData = new FragmentData();
+		Fragment fragmentData = new FragmentData();
 
 		String data = fragmentTab4ViewEt.getText().toString();
 		Bundle bundle = new Bundle(); // bundle对象传递数据
@@ -167,9 +171,9 @@ public class FragmentItemActivity extends Activity implements OnClickListener, O
 		fragmentData.setArguments(bundle);
 
 		// 通过set方法传值
-		fragmentData.setTransString(data);
+		((FragmentData) fragmentData).setTransString(data);
 
-		transaction.replace(R.id.fragment_data_layout, fragmentData);
+		transaction.add(R.id.fragment_data_layout, fragmentData);
 		transaction.commit();
 		Logger.showToast(mContext, "向Fragment发送数据：" + data);
 	}
@@ -181,7 +185,7 @@ public class FragmentItemActivity extends Activity implements OnClickListener, O
 	 * @date 2015-9-15上午9:53:15
 	 */
 	private void changeFragment() {
-		FragmentManager manager = getFragmentManager();
+		FragmentManager manager = getSupportFragmentManager();
 		FragmentTransaction beginTransaction = manager.beginTransaction();
 		if (flag) {
 			FragmentLife2 fragmentLife2 = new FragmentLife2();
@@ -189,7 +193,7 @@ public class FragmentItemActivity extends Activity implements OnClickListener, O
 			fragmentTab3ViewTv.setText("第二个Fragment，几种情况下的生命周期过程");
 			flag = false;
 		} else {
-			FragmentLife1 fragmentLife1 = new FragmentLife1();
+			Fragment fragmentLife1 = new FragmentLife1();
 			beginTransaction.replace(R.id.fragment_life_layout, fragmentLife1);
 			flag = true;
 			fragmentTab3ViewTv.setText("第一个Fragment,简单介绍下所有回调函数");
@@ -205,7 +209,7 @@ public class FragmentItemActivity extends Activity implements OnClickListener, O
 	 */
 	private void addFragmentDynamic() {
 		FragmentDynamic fragmentDynamic = new FragmentDynamic();
-		FragmentManager manager = getFragmentManager();
+		FragmentManager manager = getSupportFragmentManager();
 		FragmentTransaction beginTransaction = manager.beginTransaction();
 		beginTransaction.add(R.id.fragment_dynamic_layout, fragmentDynamic);
 		beginTransaction.addToBackStack(null);

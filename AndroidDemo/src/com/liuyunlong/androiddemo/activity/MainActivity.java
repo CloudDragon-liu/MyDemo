@@ -90,13 +90,18 @@ public class MainActivity extends Activity {
 					startActivity(intent);
 					break;
 				case ConstantUtils.NUMBER.ONE: // Fragment
-					Intent intentFrag = new Intent(mContext, FragmentItemActivity.class);
+					Intent intentFrag = new Intent(mContext, FragmentBaseItemActivity.class);
 					startActivity(intentFrag);
 					break;
 				case ConstantUtils.NUMBER.TWO: // ViewPager实现Tab页效果
 					Intent intent2 = new Intent(mContext, ViewPagerItemActivity.class);
 					intent2.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
 					startActivity(intent2);
+					break;
+				case ConstantUtils.NUMBER.THREE: // Fragment实现Tab页效果
+					Intent fragmentIntent = new Intent(mContext, FragmentTabItemActivity.class);
+					fragmentIntent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+					startActivity(fragmentIntent);
 					break;
 
 				default:

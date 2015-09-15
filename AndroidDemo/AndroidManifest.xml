@@ -24,7 +24,8 @@
         </activity>
         <activity android:name="com.liuyunlong.androiddemo.activity.HandlerItemActivity" />
         <activity android:name="com.liuyunlong.androiddemo.activity.ViewPagerItemActivity" />
-        <activity android:name="com.liuyunlong.androiddemo.activity.FragmentItemActivity" />
+        <activity android:name="com.liuyunlong.androiddemo.activity.FragmentBaseItemActivity" />
+        <activity android:name="com.liuyunlong.androiddemo.activity.FragmentTabItemActivity" />
     </application>
 
 </manifest>
