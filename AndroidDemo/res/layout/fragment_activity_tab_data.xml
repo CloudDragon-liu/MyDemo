@@ -4,10 +4,24 @@
     android:layout_height="match_parent"
     android:orientation="vertical" >
 
-    <fragment
-        android:id="@+id/myfragment_data"
-        android:name="com.liuyunlong.androiddemo.fragment.FragmentStatic"
+    <EditText
+        android:id="@+id/fragment_tab_4_view_et"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content" >
+    </EditText>
+
+    <Button
+        android:id="@+id/fragment_tab_4_view_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Activity向Fragment传递数据" />
+
+    <LinearLayout
+        android:id="@+id/fragment_data_layout"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="vertical" >
+    </LinearLayout>
 
 </LinearLayout>

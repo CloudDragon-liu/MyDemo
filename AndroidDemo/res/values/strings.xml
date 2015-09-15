@@ -10,5 +10,26 @@
         注意：在宿主的视图文件中引用静态加载fragment时需要给一个唯一的标识，ID或name都可以，
         另外，在宿主文件中可以直接访问fragment中的控件</string>
     <string name="fragment_dynamic_text">动态加载：通过fragment管理器和事物进行在代码中添加管理fragment，操作类似操作数据库，最后都需要commit，如果在commit之前加上addToBackStack,会清空当前的fragment</string>
+    <string name="fragment_callbacks_text">onAttach：Fragment被添加到Activity时回调，只调用一次；
+	\nonCreate：创建Fragment时回调，只调用一次；
+	\nonCreateView：每次创建都会绘制Fragment的view组件；
+	\nonActivityCreated：当Fragment所在的Acitivty启动完成后调用；
+	\nonStart：启动Fragment；
+	\nonResume：恢复Fragment时被调用，onStart之后一定会调用onResume；
+	\nonPause：暂停Fragment；
+	\nonStop：停止Fragment；
+	\nonDestroyView：销毁Fragment所包含的组件；
+	\nonDestroy：销毁Fragment；
+	\nonDetach：Fragment从Activity中删除，只能调用一次；	</string>
+    <string name="fragment_kinds_life_text">        创建：onAttach -->> onCreate -->> onCreateView -->> onActivityCreated -->> onStart -->> onResume
+      \n切换到另一个Fragment： onPause -->> onStop -->> onDestroyView -->> onDestroy -->> onDetach -->> FragmentLife2 onAttach -->> FragmentLife2 onCreate -->> FragmentLife2 onCreateView -->> onActivityCreated -->> onStart -->> onResume
+      \n锁屏 -- 恢复：onPause -->> onStop -->> onStart -->> onResume
+      \nhome键 -- 恢复：onPause -->> onStop -->> onStart -->> onResume	</string>
+    <string name="activity_data_2_fragment">        Activity -->> Fragment 
+        \nActivity：通过Bundle和setAguments()传递
+        \nFragment：通过getAguments()接收，可通过getActivity()获取宿主的Activity
+        \nFragment -->> Activity
+        \n 可通过在Fragment中定义一个接口，在宿主Activity实现该接口，通过这个接口传值
+        \n\n 此外还可通过get和set方法传值，activity中set，在fragment中get</string>
 
 </resources>

@@ -1,5 +1,6 @@
 package com.liuyunlong.androiddemo.fragment;
 
+import com.liuyunlong.androiddemo.R;
 import com.liuyunlong.androiddemo.utils.Logger;
 
 import android.app.Activity;
@@ -8,6 +9,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 /** 
  * 演示Fragment生命周期
@@ -16,13 +18,27 @@ import android.view.ViewGroup;
 * */
 public class FragmentLife2 extends Fragment {
 
+	private TextView textView;
+
 	/**
 	 * 每次创建都会绘制Fragment的view组件
 	 */
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 		Logger.logIn("FragmentLife2 onCreateView");
-		return super.onCreateView(inflater, container, savedInstanceState);
+		/**
+		 * resource: fragment需要加载的布局文件
+		 * root:加载layout的父ViewGroup中
+		 * attachToRoot：true 返回父的ViewGroup
+		 */
+		View view = inflater.inflate(R.layout.fragment_life, container, false);
+		initView(view);
+		return view;
+	}
+
+	private void initView(View view) {
+		textView = (TextView) view.findViewById(R.id.fragment_life_tv);
+		textView.setText(getResources().getString(R.string.fragment_kinds_life_text));
 	}
 
 	/**

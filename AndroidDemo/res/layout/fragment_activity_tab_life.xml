@@ -5,21 +5,23 @@
     android:orientation="vertical" >
 
     <Button
-        android:id="@+id/fragment_life_btn"
+        android:id="@+id/fragment_tab_3_view_btn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="点击加载Fragment，切换Fragment测试生命周期" />
+        android:text="点击切换Fragment，测试生命周期" />
 
     <TextView
-        android:id="@+id/fragment_life_tv"
+        android:id="@+id/fragment_tab_3_view_tv"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
         android:text="" />
 
     <LinearLayout
         android:id="@+id/fragment_life_layout"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
+        android:layout_weight="1"
         android:orientation="vertical" >
     </LinearLayout>
 

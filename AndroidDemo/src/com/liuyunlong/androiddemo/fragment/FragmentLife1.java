@@ -1,32 +1,24 @@
 package com.liuyunlong.androiddemo.fragment;
 
-import com.liuyunlong.androiddemo.R;
-import com.liuyunlong.androiddemo.utils.Logger;
-
 import android.app.Activity;
 import android.app.Fragment;
-import android.app.FragmentManager;
-import android.app.FragmentTransaction;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.view.View.OnClickListener;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.TextView;
+
+import com.liuyunlong.androiddemo.R;
+import com.liuyunlong.androiddemo.utils.Logger;
 
 /** 
  * 演示Fragment生命周期
 * @author  : liuyunlong
 * @version ：2015-9-14 下午7:23:11 
 * */
-public class FragmentLife1 extends Fragment implements OnClickListener {
+public class FragmentLife1 extends Fragment {
 
 	private TextView textView;
-
-	private Button button;
-
-	private boolean flag = true;
 
 	/**
 	 * 每次创建都会绘制Fragment的view组件
@@ -47,8 +39,7 @@ public class FragmentLife1 extends Fragment implements OnClickListener {
 
 	private void initView(View view) {
 		textView = (TextView) view.findViewById(R.id.fragment_life_tv);
-		button = (Button) view.findViewById(R.id.fragment_life_btn);
-		button.setOnClickListener(this);
+		textView.setText(getResources().getString(R.string.fragment_callbacks_text));
 	}
 
 	/**
@@ -139,30 +130,5 @@ public class FragmentLife1 extends Fragment implements OnClickListener {
 	public void onDetach() {
 		super.onDetach();
 		Logger.logIn("FragmentLife1 onDetach");
-	}
-
-	@Override
-	public void onClick(View v) {
-		switch (v.getId()) {
-		case R.id.fragment_life_btn:
-			FragmentManager manager = getFragmentManager();
-			FragmentTransaction beginTransaction = manager.beginTransaction();
-			if (flag) {
-				FragmentLife2 fragmentLife2 = new FragmentLife2();
-				beginTransaction.replace(R.id.fragment_life_layout, fragmentLife2);
-				textView.setText("第二个Fragment");
-				flag = false;
-			} else {
-				FragmentLife1 fragmentLife1 = new FragmentLife1();
-				beginTransaction.replace(R.id.fragment_life_layout, fragmentLife1);
-				flag = true;
-				textView.setText("第一个Fragment");
-			}
-			beginTransaction.commit();
-			break;
-
-		default:
-			break;
-		}
 	}
 }

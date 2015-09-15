@@ -4,16 +4,13 @@
     android:layout_height="match_parent"
     android:orientation="vertical" >
 
-    <Button
-        android:id="@+id/fragment_life_btn"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="点击加载Fragment，切换Fragment测试生命周期" />
-
     <TextView
         android:id="@+id/fragment_life_tv"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="" />
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:text="点点滴滴"
+        android:textColor="@color/gray_level_4"
+        android:textSize="13sp" />
 
 </LinearLayout>

@@ -14,22 +14,27 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.Window;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.liuyunlong.androiddemo.R;
 import com.liuyunlong.androiddemo.adpter.ViewPagerAdapter;
+import com.liuyunlong.androiddemo.fragment.FragmentData;
+import com.liuyunlong.androiddemo.fragment.FragmentData.MyListener;
 import com.liuyunlong.androiddemo.fragment.FragmentDynamic;
 import com.liuyunlong.androiddemo.fragment.FragmentLife1;
+import com.liuyunlong.androiddemo.fragment.FragmentLife2;
 import com.liuyunlong.androiddemo.utils.ConstantUtils;
+import com.liuyunlong.androiddemo.utils.Logger;
 
 /**
  *  @author liuyunlong
  *  @date 2015-9-13 下午3:23:50 
  *  @version 1.0 
  */
-public class FragmentItemActivity extends Activity implements OnClickListener, OnPageChangeListener {
+public class FragmentItemActivity extends Activity implements OnClickListener, OnPageChangeListener, MyListener {
 
 	private Context mContext;
 
@@ -40,7 +45,7 @@ public class FragmentItemActivity extends Activity implements OnClickListener, O
 	private ImageView fragmentTabIv1, fragmentTabIv2, fragmentTabIv3, fragmentTabIv4;
 
 	/**Tab textView*/
-	private TextView fragmentTabTv1, fragmentTabTv2, fragmentTabTv3, fragmentTabTv4, fragmentTabHeadTv;
+	private TextView fragmentTabTv1, fragmentTabTv2, fragmentTabTv3, fragmentTabTv4, fragmentTabHeadTv, fragmentTab3ViewTv;
 
 	/**fragment viewpager*/
 	private ViewPager viewPager;
@@ -51,7 +56,11 @@ public class FragmentItemActivity extends Activity implements OnClickListener, O
 	/**fragment viewpager adapter*/
 	private ViewPagerAdapter adapter;
 
-	private Button button;
+	private Button fragmentTab3ViewBtn, fragmentTab4ViewBtn;
+
+	private EditText fragmentTab4ViewEt;
+
+	private boolean flag = false;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -90,10 +99,17 @@ public class FragmentItemActivity extends Activity implements OnClickListener, O
 		viewPager.setOnPageChangeListener(this);
 		View view1 = View.inflate(mContext, R.layout.fragment_activity_tab_static, null);
 		View view2 = View.inflate(mContext, R.layout.fragment_activity_tab_dynamic, null);
+
 		View view3 = View.inflate(mContext, R.layout.fragment_activity_tab_life, null);
-		button = (Button) view3.findViewById(R.id.fragment_life_btn);
-		button.setOnClickListener(this);
+		fragmentTab3ViewBtn = (Button) view3.findViewById(R.id.fragment_tab_3_view_btn);
+		fragmentTab3ViewBtn.setOnClickListener(this);
+		fragmentTab3ViewTv = (TextView) view3.findViewById(R.id.fragment_tab_3_view_tv);
+
 		View view4 = View.inflate(mContext, R.layout.fragment_activity_tab_data, null);
+		fragmentTab4ViewBtn = (Button) view4.findViewById(R.id.fragment_tab_4_view_btn);
+		fragmentTab4ViewBtn.setOnClickListener(this);
+		fragmentTab4ViewEt = (EditText) view4.findViewById(R.id.fragment_tab_4_view_et);
+
 		views.add(view1);
 		views.add(view2);
 		views.add(view3);
@@ -104,38 +120,81 @@ public class FragmentItemActivity extends Activity implements OnClickListener, O
 
 	@Override
 	public void onClick(View view) {
-		set2Normal();
 		switch (view.getId()) {
 		case R.id.fragment_tab_1_layout:
+			set2Normal();
 			viewPager.setCurrentItem(ConstantUtils.NUMBER.ZERO);
-			fragmentTabIv1.setImageResource(R.drawable.fragment_tab_1_sel);
-			fragmentTabTv1.setTextColor(getResources().getColor(R.color.main_tab_text_select));
-			fragmentTabHeadTv.setText("静态加载");
 			break;
 		case R.id.fragment_tab_2_layout:
+			set2Normal();
 			viewPager.setCurrentItem(ConstantUtils.NUMBER.ONE);
-			fragmentTabIv2.setImageResource(R.drawable.fragment_tab_2_sel);
-			fragmentTabTv2.setTextColor(getResources().getColor(R.color.main_tab_text_select));
-			fragmentTabHeadTv.setText("动态加载");
 			break;
 		case R.id.fragment_tab_3_layout:
+			set2Normal();
 			viewPager.setCurrentItem(ConstantUtils.NUMBER.TWO);
-			fragmentTabIv3.setImageResource(R.drawable.fragment_tab_3_sel);
-			fragmentTabTv3.setTextColor(getResources().getColor(R.color.main_tab_text_select));
-			fragmentTabHeadTv.setText("生命周期");
 			break;
 		case R.id.fragment_tab_4_layout:
+			set2Normal();
 			viewPager.setCurrentItem(ConstantUtils.NUMBER.THREE);
-			fragmentTabIv4.setImageResource(R.drawable.fragment_tab_4_sel);
-			fragmentTabTv4.setTextColor(getResources().getColor(R.color.main_tab_text_select));
-			fragmentTabHeadTv.setText("数据传递");
 			break;
-		case R.id.fragment_life_btn:
+		case R.id.fragment_tab_3_view_btn:
+			changeFragment();
+			break;
+		case R.id.fragment_tab_4_view_btn:
+			sendData2fragment();
 			break;
 
 		default:
 			break;
 		}
+	}
+
+	/**
+	 * 向fragment传递数据
+	 * 
+	 * @author liuyunlong
+	 * @date 2015-9-15上午10:09:58
+	 */
+	private void sendData2fragment() {
+
+		FragmentManager manager = getFragmentManager(); // 动态加载Fragment
+		FragmentTransaction transaction = manager.beginTransaction();
+		FragmentData fragmentData = new FragmentData();
+
+		String data = fragmentTab4ViewEt.getText().toString();
+		Bundle bundle = new Bundle(); // bundle对象传递数据
+		bundle.putString("name", data);
+		fragmentData.setArguments(bundle);
+
+		// 通过set方法传值
+		fragmentData.setTransString(data);
+
+		transaction.replace(R.id.fragment_data_layout, fragmentData);
+		transaction.commit();
+		Logger.showToast(mContext, "向Fragment发送数据：" + data);
+	}
+
+	/**
+	 * 切换Fragment测试Fragment的生命周期
+	 * 
+	 * @author liuyunlong
+	 * @date 2015-9-15上午9:53:15
+	 */
+	private void changeFragment() {
+		FragmentManager manager = getFragmentManager();
+		FragmentTransaction beginTransaction = manager.beginTransaction();
+		if (flag) {
+			FragmentLife2 fragmentLife2 = new FragmentLife2();
+			beginTransaction.replace(R.id.fragment_life_layout, fragmentLife2);
+			fragmentTab3ViewTv.setText("第二个Fragment，几种情况下的生命周期过程");
+			flag = false;
+		} else {
+			FragmentLife1 fragmentLife1 = new FragmentLife1();
+			beginTransaction.replace(R.id.fragment_life_layout, fragmentLife1);
+			flag = true;
+			fragmentTab3ViewTv.setText("第一个Fragment,简单介绍下所有回调函数");
+		}
+		beginTransaction.commit();
 	}
 
 	/**
@@ -149,16 +208,6 @@ public class FragmentItemActivity extends Activity implements OnClickListener, O
 		FragmentManager manager = getFragmentManager();
 		FragmentTransaction beginTransaction = manager.beginTransaction();
 		beginTransaction.add(R.id.fragment_dynamic_layout, fragmentDynamic);
-		beginTransaction.addToBackStack(null);
-		beginTransaction.commit();
-
-	}
-
-	private void addFragmentLife() {
-		FragmentLife1 FragmentLife1 = new FragmentLife1();
-		FragmentManager manager = getFragmentManager();
-		FragmentTransaction beginTransaction = manager.beginTransaction();
-		beginTransaction.add(R.id.fragment_life_layout, FragmentLife1);
 		beginTransaction.addToBackStack(null);
 		beginTransaction.commit();
 
@@ -204,7 +253,6 @@ public class FragmentItemActivity extends Activity implements OnClickListener, O
 			fragmentTabHeadTv.setText("动态加载");
 			break;
 		case ConstantUtils.NUMBER.TWO:
-			// addFragmentLife();
 			fragmentTabIv3.setImageResource(R.drawable.fragment_tab_3_sel);
 			fragmentTabTv3.setTextColor(getResources().getColor(R.color.main_tab_text_select));
 			fragmentTabHeadTv.setText("生命周期");
@@ -218,5 +266,13 @@ public class FragmentItemActivity extends Activity implements OnClickListener, O
 		default:
 			break;
 		}
+	}
+
+	/**
+	 * FragmentData的接口
+	 */
+	@Override
+	public void response(String string) {
+		Logger.showToast(mContext, "Activity 接收到Fragment的回应信息为：" + string);
 	}
 }
