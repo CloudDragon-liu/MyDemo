@@ -22,9 +22,11 @@ import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -33,7 +35,7 @@ import android.widget.TextView;
   * @date 2015-9-15 下午11:52:46 
   * @version 1.0 
   */
-public class FragmentPage1 extends Fragment implements OnItemClickListener {
+public class FragmentPage1 extends Fragment implements OnItemClickListener, OnClickListener {
 
 	private Context mContext;
 
@@ -48,6 +50,8 @@ public class FragmentPage1 extends Fragment implements OnItemClickListener {
 	private String[] mItemTitleArray, mItemBriefArray;
 
 	private MainListViewAdapter adapter;
+
+	private ImageView mTopLeftIcon, mTopRightIcon;
 
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -93,11 +97,19 @@ public class FragmentPage1 extends Fragment implements OnItemClickListener {
 		mContext = getActivity();
 		mHeadTextView = (TextView) view.findViewById(R.id.fragment_layout_top_tv);
 		mHeadTextView.setText(getResources().getStringArray(R.array.main_tab_text)[0]);
+		mTopLeftIcon = (ImageView) view.findViewById(R.id.top_left_img);
+		mTopRightIcon = (ImageView) view.findViewById(R.id.top_right_1_img);
+		mTopRightIcon.setVisibility(View.VISIBLE);
+		mTopLeftIcon.setOnClickListener(this);
+		mTopRightIcon.setOnClickListener(this);
 		listView = (ListView) view.findViewById(R.id.learn_rec_list);
 		listView.setAdapter(adapter);
 		listView.setOnItemClickListener(this);
 	}
 
+	/**
+	 * listView的点击监听
+	 */
 	@Override
 	public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 		Intent intent = new Intent();
@@ -135,6 +147,24 @@ public class FragmentPage1 extends Fragment implements OnItemClickListener {
 			intent.setClass(mContext, MainTabActivity.class);
 			intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
 			startActivity(intent);
+			break;
+
+		default:
+			break;
+		}
+	}
+
+	/**
+	 * 点击事件监听
+	 */
+	@Override
+	public void onClick(View v) {
+		switch (v.getId()) {
+		case R.id.top_left_img:
+			Logger.showToast(mContext, "正在开发中。。。");
+			break;
+		case R.id.top_right_1_img:
+			Logger.showToast(mContext, "正在开发中。。。");
 			break;
 
 		default:

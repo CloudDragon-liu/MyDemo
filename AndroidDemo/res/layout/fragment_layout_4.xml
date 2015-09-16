@@ -2,14 +2,45 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/fragment_bac"
     android:orientation="vertical" >
 
     <include layout="@layout/fragment_layout_top" />
 
-    <TextView
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:gravity="center"
-        android:text="forth tab" />
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
+
+        <TextView
+            android:id="@+id/textView1"
+            style="@style/tab_4_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="家庭成员" />
+
+        <GridView
+            android:id="@+id/member_gridview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:numColumns="4" >
+        </GridView>
+
+        <TextView
+            android:id="@+id/textView2"
+            style="@style/tab_4_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="亲情互动" />
+
+        <ListView
+            android:id="@+id/chat_listview"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:background="@color/white" >
+        </ListView>
+    </LinearLayout>
 
 </LinearLayout>
