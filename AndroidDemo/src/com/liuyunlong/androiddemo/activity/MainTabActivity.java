@@ -1,5 +1,8 @@
 package com.liuyunlong.androiddemo.activity;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentTabHost;
@@ -7,6 +10,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.Window;
 import android.widget.ImageView;
+import android.widget.TabHost.OnTabChangeListener;
 import android.widget.TabHost.TabSpec;
 import android.widget.TextView;
 
@@ -28,18 +32,34 @@ public class MainTabActivity extends FragmentActivity {
 
 	private FragmentTabHost mTabHost;
 
-	private Class[] mFragmentArray = { FragmentPage1.class, FragmentPage2.class, FragmentPage3.class, FragmentPage4.class };
+	/**当前TabHost的位置*/
+	private int mTabHostPos;
+
+	private List<Class> mFragments = new ArrayList<Class>();
 
 	private String[] mTextviewArray;
 
-	private int[] mImageViewArray = { R.drawable.fragment_tab_1_nor, R.drawable.fragment_tab_2_nor, R.drawable.fragment_tab_3_nor, R.drawable.fragment_tab_4_nor };
+	private List<Integer> mImgs = new ArrayList<Integer>();
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		requestWindowFeature(Window.FEATURE_NO_TITLE);
 		setContentView(R.layout.main_tab_layout);
+		initData();
 		initView();
+	}
+
+	private void initData() {
+		mTextviewArray = getResources().getStringArray(R.array.main_tab_text);
+		mFragments.add(FragmentPage1.class);
+		mFragments.add(FragmentPage2.class);
+		mFragments.add(FragmentPage3.class);
+		mFragments.add(FragmentPage4.class);
+		mImgs.add(R.drawable.tab_1_selector);
+		mImgs.add(R.drawable.tab_2_selector);
+		mImgs.add(R.drawable.tab_3_selector);
+		mImgs.add(R.drawable.tab_4_selector);
 	}
 
 	private void initView() {
@@ -47,14 +67,19 @@ public class MainTabActivity extends FragmentActivity {
 		// 实例化TabHost对象，得到TabHost
 		mTabHost = (FragmentTabHost) this.findViewById(android.R.id.tabhost);
 		mTabHost.setup(this, getSupportFragmentManager(), R.id.realtabcontent);
+		mTabHost.setOnTabChangedListener(new OnTabChangeListener() {
 
-		mTextviewArray = getResources().getStringArray(R.array.main_tab_text);
+			@Override
+			public void onTabChanged(String tabId) {
+				setCurmTabHostPos(mTabHost.getCurrentTab());
+			}
+		});
 
-		for (int i = 0; i < mFragmentArray.length; i++) {
+		for (int i = 0; i < mFragments.size(); i++) {
 			// 为每一个Tab按钮设置图标、文字和内容
 			TabSpec tabSpec = mTabHost.newTabSpec(mTextviewArray[i]).setIndicator(getTabItemView(i));
 			// 将Tab按钮添加进Tab选项卡中
-			mTabHost.addTab(tabSpec, mFragmentArray[i], null);
+			mTabHost.addTab(tabSpec, mFragments.get(i), null);
 			// 设置Tab按钮的背景
 			// mTabHost.getTabWidget().getChildAt(i).setBackgroundResource(R.drawable.selector_tab_background);
 		}
@@ -69,11 +94,19 @@ public class MainTabActivity extends FragmentActivity {
 		View view = layoutInflater.inflate(R.layout.tab_item_view, null);
 
 		ImageView imageView = (ImageView) view.findViewById(R.id.imageview);
-		imageView.setImageResource(mImageViewArray[index]);
+		imageView.setImageResource(mImgs.get(index));
 
 		TextView textView = (TextView) view.findViewById(R.id.textview);
 		textView.setText(mTextviewArray[index]);
 
 		return view;
+	}
+
+	public int getCurmTabHostPos() {
+		return mTabHostPos;
+	}
+
+	public void setCurmTabHostPos(int mTabHostPos) {
+		this.mTabHostPos = mTabHostPos;
 	}
 }
