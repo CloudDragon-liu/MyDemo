@@ -3,9 +3,12 @@ package com.liuyunlong.androiddemo.activity;
 import java.util.ArrayList;
 import java.util.List;
 
+import android.app.ActivityManager;
+import android.content.Context;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentTabHost;
+import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.Window;
@@ -19,6 +22,7 @@ import com.liuyunlong.androiddemo.fragment.FragmentPage1;
 import com.liuyunlong.androiddemo.fragment.FragmentPage2;
 import com.liuyunlong.androiddemo.fragment.FragmentPage3;
 import com.liuyunlong.androiddemo.fragment.FragmentPage4;
+import com.liuyunlong.androiddemo.utils.Logger;
 
 /** 
  * Tab主界面
@@ -26,6 +30,8 @@ import com.liuyunlong.androiddemo.fragment.FragmentPage4;
 * @version ：2015-9-15 下午8:42:17 
 * */
 public class MainTabActivity extends FragmentActivity {
+
+	private Context mContext;
 
 	/**布局对象*/
 	private LayoutInflater layoutInflater;
@@ -35,6 +41,9 @@ public class MainTabActivity extends FragmentActivity {
 	/**当前TabHost的位置*/
 	private int mTabHostPos;
 
+	private long exitTime = 0;
+
+	/**Fragmen 列表*/
 	private List<Class> mFragments = new ArrayList<Class>();
 
 	private String[] mTextviewArray;
@@ -46,6 +55,7 @@ public class MainTabActivity extends FragmentActivity {
 		super.onCreate(savedInstanceState);
 		requestWindowFeature(Window.FEATURE_NO_TITLE);
 		setContentView(R.layout.main_tab_layout);
+		mContext = this;
 		initData();
 		initView();
 	}
@@ -108,5 +118,23 @@ public class MainTabActivity extends FragmentActivity {
 
 	public void setCurmTabHostPos(int mTabHostPos) {
 		this.mTabHostPos = mTabHostPos;
+	}
+
+	@Override
+	public boolean onKeyDown(int keyCode, KeyEvent event) {
+		if (keyCode == KeyEvent.KEYCODE_BACK && event.getAction() == KeyEvent.ACTION_DOWN) { // 监听返回键
+			if (System.currentTimeMillis() - exitTime > 2000) {
+				Logger.showToast(mContext, "再按一次退出应用");
+				exitTime = System.currentTimeMillis();
+			} else {
+				int id = android.os.Process.myPid();
+				if (id != 0) {
+					android.os.Process.killProcess(id);
+				}
+				System.exit(0);
+			}
+			return true;
+		}
+		return super.onKeyDown(keyCode, event);
 	}
 }

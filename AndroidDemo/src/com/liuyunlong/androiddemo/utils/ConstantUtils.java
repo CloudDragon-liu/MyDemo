@@ -20,6 +20,30 @@ public class ConstantUtils {
 		public static final int TEN = 10;
 	}
 
+	/**
+	 * handler消息
+	 * @author liuyunlong
+	 *2015-9-16 下午3:14:14
+	 */
+	public static class MSG_HANDLER {
+		/**进入主应用*/
+		public static final int ENTER_MAIN_MENU = 0;
+	}
+
+	/**
+	 * 测试
+	 * @author liuyunlong
+	 *2015-9-16 下午3:13:11
+	 */
+	public static class OTHERS extends TypeInfo {
+		public OTHERS(Integer type, String msg) {
+			super(type, msg);
+		}
+
+		public static final OTHERS FIRST = new OTHERS(0, "XX");
+
+	}
+
 	public static class TypeInfo {
 		private Integer type;
 

@@ -4,15 +4,27 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.liuyunlong.androiddemo.R;
+import com.liuyunlong.androiddemo.activity.FragmentBaseItemActivity;
+import com.liuyunlong.androiddemo.activity.FragmentPagerAdapterTabActivity;
+import com.liuyunlong.androiddemo.activity.FragmentTabItemActivity;
+import com.liuyunlong.androiddemo.activity.HandlerItemActivity;
+import com.liuyunlong.androiddemo.activity.MainTabActivity;
+import com.liuyunlong.androiddemo.activity.ViewPagerItemActivity;
 import com.liuyunlong.androiddemo.adpter.MainListViewAdapter;
 import com.liuyunlong.androiddemo.entity.MainItem;
+import com.liuyunlong.androiddemo.utils.ConstantUtils;
+import com.liuyunlong.androiddemo.utils.Logger;
 
+import android.content.Context;
+import android.content.Intent;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemClickListener;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -21,7 +33,9 @@ import android.widget.TextView;
   * @date 2015-9-15 下午11:52:46 
   * @version 1.0 
   */
-public class FragmentPage1 extends Fragment {
+public class FragmentPage1 extends Fragment implements OnItemClickListener {
+
+	private Context mContext;
 
 	private TextView mHeadTextView;
 
@@ -76,9 +90,55 @@ public class FragmentPage1 extends Fragment {
 	 * @date 2015-9-16下午2:21:04
 	 */
 	private void initView(View view) {
+		mContext = getActivity();
 		mHeadTextView = (TextView) view.findViewById(R.id.fragment_layout_top_tv);
 		mHeadTextView.setText(getResources().getStringArray(R.array.main_tab_text)[0]);
 		listView = (ListView) view.findViewById(R.id.learn_rec_list);
 		listView.setAdapter(adapter);
+		listView.setOnItemClickListener(this);
+	}
+
+	@Override
+	public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+		Intent intent = new Intent();
+		switch (position) {
+		case ConstantUtils.NUMBER.ZERO:
+			intent.setClass(mContext, HandlerItemActivity.class);
+			intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+			startActivity(intent);
+			break;
+		case ConstantUtils.NUMBER.ONE: // Fragment
+			intent.setClass(mContext, FragmentBaseItemActivity.class);
+			startActivity(intent);
+			break;
+		case ConstantUtils.NUMBER.TWO: // ViewPager实现Tab页效果
+			intent.setClass(mContext, ViewPagerItemActivity.class);
+			intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+			startActivity(intent);
+			break;
+		case ConstantUtils.NUMBER.THREE: // Fragment实现Tab页效果
+			intent.setClass(mContext, FragmentTabItemActivity.class);
+			intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+			startActivity(intent);
+			break;
+		case ConstantUtils.NUMBER.FOUR: // FragmentPagerAdapter+
+										// viewPager实现Tab页效果
+			intent.setClass(mContext, FragmentPagerAdapterTabActivity.class);
+			intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+			startActivity(intent);
+			break;
+		case ConstantUtils.NUMBER.FIVE: // ViewPagerIndicator
+										// +viewPager实现Tab页效果
+			Logger.showToast(mContext, "devoloping...");
+			break;
+		case ConstantUtils.NUMBER.SIX: // FragmentTabHost
+			intent.setClass(mContext, MainTabActivity.class);
+			intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+			startActivity(intent);
+			break;
+
+		default:
+			break;
+		}
 	}
 }
