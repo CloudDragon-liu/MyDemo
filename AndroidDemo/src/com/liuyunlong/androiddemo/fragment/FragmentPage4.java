@@ -6,6 +6,7 @@ import java.util.List;
 import com.liuyunlong.androiddemo.R;
 import com.liuyunlong.androiddemo.activity.FamilyManagerActivity;
 import com.liuyunlong.androiddemo.activity.LoginActivity;
+import com.liuyunlong.androiddemo.activity.UserCenterActivity;
 import com.liuyunlong.androiddemo.adpter.ChatItemListViewAdapter;
 import com.liuyunlong.androiddemo.adpter.MemberGridViewAdapter;
 import com.liuyunlong.androiddemo.entity.ChatItem;
@@ -104,10 +105,11 @@ public class FragmentPage4 extends Fragment implements OnClickListener, OnItemCl
 
 	@Override
 	public void onClick(View v) {
+		boolean isLogin = true; // 模拟已经登录
 		Intent intent = new Intent();
 		switch (v.getId()) {
 		case R.id.top_left_img:
-			intent.setClass(mContext, LoginActivity.class);
+			intent.setClass(mContext, isLogin ? UserCenterActivity.class : LoginActivity.class);
 			startActivity(intent);
 			break;
 		case R.id.top_right_4_img: // 家庭管理

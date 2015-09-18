@@ -5,6 +5,7 @@
     <string name="action_settings">Settings</string>
     <string name="hello_world">Hello world!</string>
     <string name="login">登录</string>
+    <string name="user_center">个人中心</string>
     <string name="fragment_static_text">静态加载：首先要自定义一个fragment，继承fragment，该fragment有自己的控件,可以独立响应点击事件。
         在其他视图中应用该fragment即可，在布局文件中通过标签加载的fragment即为为静态加载fragment（个人在viewpager中的一个view中静态加载一个fragment遇到一个问题是需要将宽度设为match_parent）。
         该fragment可被应用到任何布局中，其中的控件和事件不变，

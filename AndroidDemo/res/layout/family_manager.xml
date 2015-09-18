@@ -22,7 +22,7 @@
         android:background="@color/white"
         android:gravity="center"
         android:text="退出家庭"
-        android:textColor="#F47474"
+        android:textColor="@color/alert"
         android:textSize="15sp" />
 
 </LinearLayout>

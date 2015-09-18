@@ -31,6 +31,7 @@
         <activity android:name="com.liuyunlong.androiddemo.activity.FamilyManagerActivity" />
         <activity android:name="com.liuyunlong.androiddemo.activity.PrivilegeManageActivity" />
         <activity android:name="com.liuyunlong.androiddemo.activity.LoginActivity" />
+        <activity android:name="com.liuyunlong.androiddemo.activity.UserCenterActivity" />
     </application>
 
 </manifest>
