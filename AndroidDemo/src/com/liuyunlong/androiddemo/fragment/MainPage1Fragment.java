@@ -35,7 +35,7 @@ import android.widget.TextView;
   * @date 2015-9-15 下午11:52:46 
   * @version 1.0 
   */
-public class FragmentPage1 extends Fragment implements OnItemClickListener, OnClickListener {
+public class MainPage1Fragment extends Fragment implements OnItemClickListener, OnClickListener {
 
 	private Context mContext;
 

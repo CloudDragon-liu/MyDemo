@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <TextView
+        android:id="@+id/add_mem_tv"
+        style="@style/more_ment_item_tv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/more_menu_top_selector"
+        android:drawableLeft="@drawable/family_add_member"
+        android:text="添加成员" />
+
+    <TextView
+        android:id="@+id/family_manager_tv"
+        style="@style/more_ment_item_tv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/more_menu_bottom_selector"
+        android:drawableLeft="@drawable/family_manager_nor"
+        android:text="家庭管理" />
+
+</LinearLayout>

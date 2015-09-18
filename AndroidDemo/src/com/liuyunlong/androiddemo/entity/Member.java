@@ -45,6 +45,14 @@ public class Member {
 		this.userIcon = bitmap;
 	}
 
+	public Member(String nickname, String username, String phonenumber, Bitmap bitmap) {
+		super();
+		this.nickname = nickname;
+		this.username = username;
+		this.userIcon = bitmap;
+		this.phonenumber = phonenumber;
+	}
+
 	public Integer getId() {
 		return id;
 	}

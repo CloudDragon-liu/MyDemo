@@ -18,7 +18,7 @@ import android.widget.TextView;
   * @date 2015-9-15 下午11:53:38 
   * @version 1.0 
   */
-public class FragmentPage3 extends Fragment implements OnClickListener {
+public class MainPage3Fragment extends Fragment implements OnClickListener {
 
 	private Context mContext;
 

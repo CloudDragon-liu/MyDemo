@@ -18,10 +18,10 @@ import android.widget.TabHost.TabSpec;
 import android.widget.TextView;
 
 import com.liuyunlong.androiddemo.R;
-import com.liuyunlong.androiddemo.fragment.FragmentPage1;
-import com.liuyunlong.androiddemo.fragment.FragmentPage2;
-import com.liuyunlong.androiddemo.fragment.FragmentPage3;
-import com.liuyunlong.androiddemo.fragment.FragmentPage4;
+import com.liuyunlong.androiddemo.fragment.MainPage1Fragment;
+import com.liuyunlong.androiddemo.fragment.MainPage2Fragment;
+import com.liuyunlong.androiddemo.fragment.MainPage3Fragment;
+import com.liuyunlong.androiddemo.fragment.MainPage4Fragment;
 import com.liuyunlong.androiddemo.utils.Logger;
 
 /** 
@@ -62,10 +62,10 @@ public class MainTabActivity extends FragmentActivity {
 
 	private void initData() {
 		mTextviewArray = getResources().getStringArray(R.array.main_tab_text);
-		mFragments.add(FragmentPage1.class);
-		mFragments.add(FragmentPage2.class);
-		mFragments.add(FragmentPage3.class);
-		mFragments.add(FragmentPage4.class);
+		mFragments.add(MainPage1Fragment.class);
+		mFragments.add(MainPage2Fragment.class);
+		mFragments.add(MainPage3Fragment.class);
+		mFragments.add(MainPage4Fragment.class);
 		mImgs.add(R.drawable.tab_1_selector);
 		mImgs.add(R.drawable.tab_2_selector);
 		mImgs.add(R.drawable.tab_3_selector);

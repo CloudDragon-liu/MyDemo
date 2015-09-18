@@ -18,7 +18,7 @@ import android.widget.TextView;
   * @date 2015-9-15 下午11:53:15 
   * @version 1.0 
   */
-public class FragmentPage2 extends Fragment implements OnClickListener {
+public class MainPage2Fragment extends Fragment implements OnClickListener {
 
 	private LinearLayout layout;
 

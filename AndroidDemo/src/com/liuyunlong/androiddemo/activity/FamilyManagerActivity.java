@@ -6,7 +6,7 @@ import java.util.List;
 import com.liuyunlong.androiddemo.R;
 import com.liuyunlong.androiddemo.adpter.MemberListViewAdapter;
 import com.liuyunlong.androiddemo.entity.Member;
-import com.liuyunlong.androiddemo.fragment.FragmentPage4;
+import com.liuyunlong.androiddemo.fragment.MainPage4Fragment;
 import com.liuyunlong.androiddemo.utils.Logger;
 
 import android.app.Activity;

@@ -17,7 +17,7 @@
             style="@style/tab_4_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="家庭成员" />
+            android:text="家庭时光" />
 
         <GridView
             android:id="@+id/member_gridview"

@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/fragment_bac"
+    android:orientation="vertical" >
+
+    <include layout="@layout/family_top_layout" />
+
+    <FrameLayout
+        android:id="@+id/add_member_content"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" >
+    </FrameLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:orientation="horizontal" >
+
+        <LinearLayout
+            android:id="@+id/add_by_qrcode_layout"
+            android:layout_width="0dp"
+            android:layout_height="60dp"
+            android:layout_weight="1"
+            android:gravity="center_horizontal"
+            android:orientation="vertical" >
+
+            <LinearLayout
+                android:id="@+id/add_qrcode_line"
+                android:layout_width="80dp"
+                android:layout_height="2dp"
+                android:background="@color/main_tab_text_select"
+                android:orientation="horizontal"
+                android:visibility="invisible" >
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/add_by_qrcode_tv"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="二维码扫描" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/add_by_manual_layout"
+            android:layout_width="0dp"
+            android:layout_height="60dp"
+            android:layout_weight="1"
+            android:gravity="center_horizontal"
+            android:orientation="vertical" >
+
+            <LinearLayout
+                android:id="@+id/add_manual_line"
+                android:layout_width="80dp"
+                android:layout_height="2dp"
+                android:background="@color/main_tab_text_select"
+                android:orientation="horizontal"
+                android:visibility="invisible" >
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/add_by_manual_tv"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="手动添加" />
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>
