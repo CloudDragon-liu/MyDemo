@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/fragment_bac"
+    android:orientation="vertical" >
+
+    <include layout="@layout/family_top_layout" />
+
+    <TextView
+        android:id="@+id/privilege_manage_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="20dp"
+        android:text="谁的权限"
+        android:textColor="@color/main_tab_text_normal" />
+
+    <ListView
+        android:id="@+id/equ_privi_listveiw"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="@color/white" >
+    </ListView>
+
+</LinearLayout>

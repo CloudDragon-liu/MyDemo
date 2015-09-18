@@ -32,16 +32,17 @@ public class Member {
 
 	private String queryString;
 
-	private Bitmap bitmap;
+	private Bitmap userIcon;
 
 	public Member() {
 		super();
 	}
 
-	public Member(String nickname, Bitmap bitmap) {
+	public Member(String nickname, String username, Bitmap bitmap) {
 		super();
 		this.nickname = nickname;
-		this.bitmap = bitmap;
+		this.username = username;
+		this.userIcon = bitmap;
 	}
 
 	public Integer getId() {
@@ -132,17 +133,18 @@ public class Member {
 		this.queryString = queryString;
 	}
 
-	public Bitmap getBitmap() {
-		return bitmap;
+	public Bitmap getUserIcon() {
+		return userIcon;
 	}
 
-	public void setBitmap(Bitmap bitmap) {
-		this.bitmap = bitmap;
+	public void setUserIcon(Bitmap userIcon) {
+		this.userIcon = userIcon;
 	}
 
 	@Override
 	public String toString() {
 		return "Member [id=" + id + ", username=" + username + ", password=" + password + ", nickname=" + nickname + ", phonenumber=" + phonenumber + ", email=" + email
-				+ ", icon=" + icon + ", isdel=" + isdel + ", registerTime=" + registerTime + ", usertype=" + usertype + ", queryString=" + queryString + ", bitmap=" + bitmap + "]";
+				+ ", icon=" + icon + ", isdel=" + isdel + ", registerTime=" + registerTime + ", usertype=" + usertype + ", queryString=" + queryString + ", userIcon=" + userIcon
+				+ "]";
 	}
 }

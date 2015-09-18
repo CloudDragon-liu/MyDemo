@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.liuyunlong.androiddemo.R;
+import com.liuyunlong.androiddemo.activity.FamilyManagerActivity;
 import com.liuyunlong.androiddemo.adpter.ChatItemListViewAdapter;
 import com.liuyunlong.androiddemo.adpter.MemberGridViewAdapter;
 import com.liuyunlong.androiddemo.entity.ChatItem;
@@ -11,6 +12,7 @@ import com.liuyunlong.androiddemo.entity.Member;
 import com.liuyunlong.androiddemo.utils.Logger;
 
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -67,18 +69,15 @@ public class FragmentPage4 extends Fragment implements OnClickListener, OnItemCl
 	}
 
 	private void initData() {
-		members.add(new Member("女儿", BitmapFactory.decodeResource(getResources(), R.drawable.daughter)));
-		members.add(new Member("儿子", BitmapFactory.decodeResource(getResources(), R.drawable.son)));
-		members.add(new Member("女儿", BitmapFactory.decodeResource(getResources(), R.drawable.daughter)));
-		members.add(new Member("儿子", BitmapFactory.decodeResource(getResources(), R.drawable.son)));
-		members.add(new Member("添加", BitmapFactory.decodeResource(getResources(), R.drawable.add_family_member)));
+		members.add(new Member("女儿", "", BitmapFactory.decodeResource(getResources(), R.drawable.daughter)));
+		members.add(new Member("儿子", "", BitmapFactory.decodeResource(getResources(), R.drawable.son)));
+		members.add(new Member("女儿", "", BitmapFactory.decodeResource(getResources(), R.drawable.daughter)));
+		members.add(new Member("儿子", "", BitmapFactory.decodeResource(getResources(), R.drawable.son)));
+		members.add(new Member("添加", "", BitmapFactory.decodeResource(getResources(), R.drawable.add_family_member)));
 
-		// mChatItems.add(new ChatItem("女儿", "现在回来吗？", "上午11:22", "1",
-		// BitmapFactory.decodeResource(getResources(), R.drawable.daughter)));
-		// mChatItems.add(new ChatItem("儿子", "我打球去了？", "下午15:22", "3",
-		// BitmapFactory.decodeResource(getResources(), R.drawable.son)));
+		mChatItems.add(new ChatItem("女儿", "今晚没饭吃！", "上午11:22", "1", BitmapFactory.decodeResource(getResources(), R.drawable.daughter)));
 		mChatItems.add(new ChatItem("女儿", "现在回来吗？", "上午11:22", "20", BitmapFactory.decodeResource(getResources(), R.drawable.daughter)));
-		mChatItems.add(new ChatItem("儿子", "我打球去了？", "下午15:22", "99+", BitmapFactory.decodeResource(getResources(), R.drawable.son)));
+		mChatItems.add(new ChatItem("儿子", "我打球去了？我打球去了？我打球去了？我打球去了？我打球去了？我打球去了？", "下午15:22", "99+", BitmapFactory.decodeResource(getResources(), R.drawable.son)));
 	}
 
 	private void initView(View view) {
@@ -104,12 +103,14 @@ public class FragmentPage4 extends Fragment implements OnClickListener, OnItemCl
 
 	@Override
 	public void onClick(View v) {
+		Intent intent = new Intent();
 		switch (v.getId()) {
 		case R.id.top_left_img:
 
 			break;
-		case R.id.top_right_4_img:
-
+		case R.id.top_right_4_img: // 家庭管理
+			intent.setClass(mContext, FamilyManagerActivity.class);
+			startActivity(intent);
 			break;
 
 		default:

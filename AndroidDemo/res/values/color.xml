@@ -7,5 +7,6 @@
     <color name="fragment_bac">#F5F2F0</color>
     <color name="main_tab_text_select">#1DCAAC</color>
     <color name="main_tab_text_normal">#CDCDCD</color>
+    <color name="GrayLight">#EEEEEE</color>
 
 </resources>

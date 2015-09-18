@@ -28,6 +28,8 @@
         <activity android:name="com.liuyunlong.androiddemo.activity.FragmentTabItemActivity" />
         <activity android:name="com.liuyunlong.androiddemo.activity.FragmentPagerAdapterTabActivity" />
         <activity android:name="com.liuyunlong.androiddemo.activity.MainTabActivity" />
+        <activity android:name="com.liuyunlong.androiddemo.activity.FamilyManagerActivity" />
+        <activity android:name="com.liuyunlong.androiddemo.activity.PrivilegeManageActivity" />
     </application>
 
 </manifest>

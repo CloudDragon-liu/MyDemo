@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res/com.liuyunlong.androiddemo"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white"
     android:gravity="center"
     android:orientation="horizontal" >
 
-    <ImageView
+    <com.liuyunlong.androiddemo.widget.RoundImageView
         android:id="@+id/chat_item_icon"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:padding="20dp"
+        android:layout_margin="20dp"
         android:src="@drawable/daughter" />
 
     <LinearLayout
@@ -37,7 +38,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentRight="true"
-                android:text="time" />
+                android:text="time"
+                android:textColor="@color/gray_level_4" />
         </RelativeLayout>
 
         <RelativeLayout
@@ -51,7 +53,10 @@
                 android:id="@+id/chat_item_msg_text"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="msg" />
+                android:layout_marginRight="80dp"
+                android:singleLine="true"
+                android:text="msg"
+                android:textColor="@color/gray_level_4" />
 
             <TextView
                 android:id="@+id/chat_item_tip_text"
@@ -60,8 +65,11 @@
                 android:layout_alignParentRight="true"
                 android:layout_centerInParent="true"
                 android:background="@drawable/chat_unread_tip"
+                android:paddingLeft="5dp"
+                android:paddingRight="5dp"
                 android:text="tips"
-                android:textColor="@color/white" />
+                android:textColor="@color/white"
+                android:textSize="12sp" />
         </RelativeLayout>
     </LinearLayout>
 

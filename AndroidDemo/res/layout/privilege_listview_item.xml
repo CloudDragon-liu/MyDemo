@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res/com.liuyunlong.androiddemo"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white" >
+
+    <com.liuyunlong.androiddemo.widget.RoundImageView
+        android:id="@+id/equipment_icon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_margin="20dp"
+        android:src="@drawable/daughter" />
+
+    <TextView
+        android:id="@+id/equipment_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_toRightOf="@id/equipment_icon"
+        android:maxWidth="160dp"
+        android:singleLine="true"
+        android:text="quipment name" />
+
+    <com.liuyunlong.androiddemo.widget.SwitchButton
+        android:id="@+id/privilege_switch_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="30dp" />
+
+</RelativeLayout>

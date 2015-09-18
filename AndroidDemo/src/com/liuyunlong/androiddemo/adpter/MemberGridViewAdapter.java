@@ -64,7 +64,7 @@ public class MemberGridViewAdapter extends BaseAdapter {
 		}
 
 		viewHolder.text.setText(member.getNickname());
-		viewHolder.icon.setImageBitmap(member.getBitmap());
+		viewHolder.icon.setImageBitmap(member.getUserIcon());
 		return convertView;
 	}
 
