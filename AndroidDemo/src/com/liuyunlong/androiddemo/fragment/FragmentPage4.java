@@ -5,6 +5,7 @@ import java.util.List;
 
 import com.liuyunlong.androiddemo.R;
 import com.liuyunlong.androiddemo.activity.FamilyManagerActivity;
+import com.liuyunlong.androiddemo.activity.LoginActivity;
 import com.liuyunlong.androiddemo.adpter.ChatItemListViewAdapter;
 import com.liuyunlong.androiddemo.adpter.MemberGridViewAdapter;
 import com.liuyunlong.androiddemo.entity.ChatItem;
@@ -106,7 +107,8 @@ public class FragmentPage4 extends Fragment implements OnClickListener, OnItemCl
 		Intent intent = new Intent();
 		switch (v.getId()) {
 		case R.id.top_left_img:
-
+			intent.setClass(mContext, LoginActivity.class);
+			startActivity(intent);
 			break;
 		case R.id.top_right_4_img: // 家庭管理
 			intent.setClass(mContext, FamilyManagerActivity.class);

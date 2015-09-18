@@ -38,6 +38,8 @@ containing a value of this type.
     }
     public static final class color {
         public static final int GrayLight=0x7f060006;
+        public static final int bar_nor=0x7f060007;
+        public static final int bar_sel=0x7f060008;
         public static final int black=0x7f060001;
         public static final int fragment_bac=0x7f060003;
         public static final int gray_level_4=0x7f060002;
@@ -70,65 +72,74 @@ containing a value of this type.
         public static final int add_family_member=0x7f020000;
         public static final int chat_unread_tip=0x7f020001;
         public static final int daughter=0x7f020002;
-        public static final int fragment_tab_1_nor=0x7f020003;
-        public static final int fragment_tab_1_sel=0x7f020004;
-        public static final int fragment_tab_2_nor=0x7f020005;
-        public static final int fragment_tab_2_sel=0x7f020006;
-        public static final int fragment_tab_3_nor=0x7f020007;
-        public static final int fragment_tab_3_sel=0x7f020008;
-        public static final int fragment_tab_4_nor=0x7f020009;
-        public static final int fragment_tab_4_sel=0x7f02000a;
-        public static final int ic_launcher=0x7f02000b;
-        public static final int main_item_icon=0x7f02000c;
-        public static final int main_item_selector=0x7f02000d;
-        public static final int main_tab_equ_nor=0x7f02000e;
-        public static final int main_tab_equ_sel=0x7f02000f;
-        public static final int main_tab_fam_nor=0x7f020010;
-        public static final int main_tab_fam_sel=0x7f020011;
-        public static final int main_tab_hel_nor=0x7f020012;
-        public static final int main_tab_hel_sel=0x7f020013;
-        public static final int main_tab_mall_nor=0x7f020014;
-        public static final int main_tab_mall_sel=0x7f020015;
-        public static final int main_top_left_icon_nor=0x7f020016;
-        public static final int main_top_left_icon_sel=0x7f020017;
-        public static final int main_top_left_selector=0x7f020018;
-        public static final int main_top_right_1_selector=0x7f020019;
-        public static final int main_top_right_2_selector=0x7f02001a;
-        public static final int main_top_right_3_selector=0x7f02001b;
-        public static final int main_top_right_4_selector=0x7f02001c;
-        public static final int main_top_right_icon_1_nor=0x7f02001d;
-        public static final int main_top_right_icon_1_sel=0x7f02001e;
-        public static final int main_top_right_icon_4_nor=0x7f02001f;
-        public static final int main_top_right_icon_4_sel=0x7f020020;
-        public static final int member_gridview_icon=0x7f020021;
-        public static final int nick_name_icon_nor=0x7f020022;
-        public static final int nick_name_icon_sel=0x7f020023;
-        public static final int nickname_icon_selector=0x7f020024;
-        public static final int privilege_icon_nor=0x7f020025;
-        public static final int privilege_icon_sel=0x7f020026;
-        public static final int privilege_icon_selector=0x7f020027;
-        public static final int son=0x7f020028;
-        public static final int start=0x7f020029;
-        public static final int switch_bkg_switch_off=0x7f02002a;
-        public static final int switch_bkg_switch_on=0x7f02002b;
-        public static final int switch_btn_slip=0x7f02002c;
-        public static final int tab_1_selector=0x7f02002d;
-        public static final int tab_2_selector=0x7f02002e;
-        public static final int tab_3_selector=0x7f02002f;
-        public static final int tab_4_selector=0x7f020030;
-        public static final int tab_bottom_bar=0x7f020031;
-        public static final int tab_first_img_selector=0x7f020032;
-        public static final int tab_men_text_color_selecor=0x7f020033;
-        public static final int tab_menu_bg=0x7f020034;
-        public static final int tab_menu_selector=0x7f020035;
-        public static final int tab_top_bar=0x7f020036;
-        public static final int title_back_icon_selector=0x7f020037;
-        public static final int title_bar_back_nor=0x7f020038;
-        public static final int title_bar_back_sel=0x7f020039;
-        public static final int viewpager_bottom_layout_selector=0x7f02003a;
+        public static final int edit_text_delete=0x7f020003;
+        public static final int edit_text_delete_h=0x7f020004;
+        public static final int fragment_tab_1_nor=0x7f020005;
+        public static final int fragment_tab_1_sel=0x7f020006;
+        public static final int fragment_tab_2_nor=0x7f020007;
+        public static final int fragment_tab_2_sel=0x7f020008;
+        public static final int fragment_tab_3_nor=0x7f020009;
+        public static final int fragment_tab_3_sel=0x7f02000a;
+        public static final int fragment_tab_4_nor=0x7f02000b;
+        public static final int fragment_tab_4_sel=0x7f02000c;
+        public static final int ic_launcher=0x7f02000d;
+        public static final int login_checkbox=0x7f02000e;
+        public static final int login_checkbox_press=0x7f02000f;
+        public static final int login_checkbox_selector=0x7f020010;
+        public static final int login_text_selector=0x7f020011;
+        public static final int main_item_icon=0x7f020012;
+        public static final int main_item_selector=0x7f020013;
+        public static final int main_tab_equ_nor=0x7f020014;
+        public static final int main_tab_equ_sel=0x7f020015;
+        public static final int main_tab_fam_nor=0x7f020016;
+        public static final int main_tab_fam_sel=0x7f020017;
+        public static final int main_tab_hel_nor=0x7f020018;
+        public static final int main_tab_hel_sel=0x7f020019;
+        public static final int main_tab_mall_nor=0x7f02001a;
+        public static final int main_tab_mall_sel=0x7f02001b;
+        public static final int main_top_left_icon_nor=0x7f02001c;
+        public static final int main_top_left_icon_sel=0x7f02001d;
+        public static final int main_top_left_selector=0x7f02001e;
+        public static final int main_top_right_1_selector=0x7f02001f;
+        public static final int main_top_right_2_selector=0x7f020020;
+        public static final int main_top_right_3_selector=0x7f020021;
+        public static final int main_top_right_4_selector=0x7f020022;
+        public static final int main_top_right_icon_1_nor=0x7f020023;
+        public static final int main_top_right_icon_1_sel=0x7f020024;
+        public static final int main_top_right_icon_4_nor=0x7f020025;
+        public static final int main_top_right_icon_4_sel=0x7f020026;
+        public static final int member_gridview_icon=0x7f020027;
+        public static final int nick_name_icon_nor=0x7f020028;
+        public static final int nick_name_icon_sel=0x7f020029;
+        public static final int nickname_icon_selector=0x7f02002a;
+        public static final int privilege_icon_nor=0x7f02002b;
+        public static final int privilege_icon_sel=0x7f02002c;
+        public static final int privilege_icon_selector=0x7f02002d;
+        public static final int register_selector=0x7f02002e;
+        public static final int son=0x7f02002f;
+        public static final int start=0x7f020030;
+        public static final int switch_bkg_switch_off=0x7f020031;
+        public static final int switch_bkg_switch_on=0x7f020032;
+        public static final int switch_btn_slip=0x7f020033;
+        public static final int tab_1_selector=0x7f020034;
+        public static final int tab_2_selector=0x7f020035;
+        public static final int tab_3_selector=0x7f020036;
+        public static final int tab_4_selector=0x7f020037;
+        public static final int tab_bottom_bar=0x7f020038;
+        public static final int tab_first_img_selector=0x7f020039;
+        public static final int tab_men_text_color_selecor=0x7f02003a;
+        public static final int tab_menu_bg=0x7f02003b;
+        public static final int tab_menu_selector=0x7f02003c;
+        public static final int tab_top_bar=0x7f02003d;
+        public static final int title_back_icon_selector=0x7f02003e;
+        public static final int title_bar_back_nor=0x7f02003f;
+        public static final int title_bar_back_sel=0x7f020040;
+        public static final int viewpager_bottom_layout_selector=0x7f020041;
     }
     public static final class id {
-        public static final int action_settings=0x7f050065;
+        public static final int action_settings=0x7f05006a;
+        public static final int auto_login_cbox=0x7f050041;
+        public static final int auto_login_tv=0x7f050042;
         public static final int chat_item_icon=0x7f050002;
         public static final int chat_item_msg_text=0x7f050005;
         public static final int chat_item_name_text=0x7f050003;
@@ -136,13 +147,14 @@ containing a value of this type.
         public static final int chat_item_tip_text=0x7f050006;
         public static final int chat_listview=0x7f050025;
         public static final int circle=0x7f050000;
-        public static final int equ_privi_listveiw=0x7f050052;
-        public static final int equipment_icon=0x7f05004e;
-        public static final int equipment_text=0x7f05004f;
+        public static final int equ_privi_listveiw=0x7f050057;
+        public static final int equipment_icon=0x7f050053;
+        public static final int equipment_text=0x7f050054;
         public static final int family_member_listview=0x7f050007;
         public static final int family_quit_text=0x7f050008;
         public static final int family_top_back_img=0x7f050009;
         public static final int family_top_text=0x7f05000a;
+        public static final int forget_password_tv=0x7f050043;
         public static final int frag_tab_1_img=0x7f050032;
         public static final int frag_tab_1_layout=0x7f050031;
         public static final int frag_tab_1_text=0x7f050033;
@@ -183,42 +195,44 @@ containing a value of this type.
         public static final int fragment_viewpager=0x7f050017;
         public static final int handler_begin_btn=0x7f05003f;
         public static final int handler_count_btn=0x7f050040;
-        public static final int imageview=0x7f050054;
+        public static final int imageview=0x7f050059;
         public static final int learn_rec_list=0x7f050021;
-        public static final int main_head_tv=0x7f050064;
-        public static final int main_item_brief_tv=0x7f050043;
-        public static final int main_item_iv=0x7f050041;
-        public static final int main_item_title_tv=0x7f050042;
-        public static final int main_tab1_iv=0x7f050058;
-        public static final int main_tab1_tv=0x7f050059;
-        public static final int main_tab2_iv=0x7f05005b;
-        public static final int main_tab2_tv=0x7f05005c;
-        public static final int main_tab3_iv=0x7f05005e;
-        public static final int main_tab3_tv=0x7f05005f;
-        public static final int main_tab4_iv=0x7f050061;
-        public static final int main_tab4_tv=0x7f050062;
+        public static final int login_register_layout=0x7f050045;
+        public static final int login_tv=0x7f050044;
+        public static final int main_head_tv=0x7f050069;
+        public static final int main_item_brief_tv=0x7f050048;
+        public static final int main_item_iv=0x7f050046;
+        public static final int main_item_title_tv=0x7f050047;
+        public static final int main_tab1_iv=0x7f05005d;
+        public static final int main_tab1_tv=0x7f05005e;
+        public static final int main_tab2_iv=0x7f050060;
+        public static final int main_tab2_tv=0x7f050061;
+        public static final int main_tab3_iv=0x7f050063;
+        public static final int main_tab3_tv=0x7f050064;
+        public static final int main_tab4_iv=0x7f050066;
+        public static final int main_tab4_tv=0x7f050067;
         public static final int member_gridview=0x7f050023;
-        public static final int member_gridview_item_img=0x7f050045;
-        public static final int member_gridview_item_text=0x7f050046;
-        public static final int my_fragment_btn=0x7f05004c;
-        public static final int my_fragment_text=0x7f05004d;
+        public static final int member_gridview_item_img=0x7f05004a;
+        public static final int member_gridview_item_text=0x7f05004b;
+        public static final int my_fragment_btn=0x7f050051;
+        public static final int my_fragment_text=0x7f050052;
         public static final int myfragment_static=0x7f05001f;
-        public static final int news_tip_iv=0x7f050055;
-        public static final int nickname=0x7f050048;
-        public static final int nickname_icon=0x7f05004b;
-        public static final int privilege_icon=0x7f05004a;
-        public static final int privilege_manage_text=0x7f050051;
-        public static final int privilege_switch_btn=0x7f050050;
-        public static final int realtabcontent=0x7f050044;
+        public static final int news_tip_iv=0x7f05005a;
+        public static final int nickname=0x7f05004d;
+        public static final int nickname_icon=0x7f050050;
+        public static final int privilege_icon=0x7f05004f;
+        public static final int privilege_manage_text=0x7f050056;
+        public static final int privilege_switch_btn=0x7f050055;
+        public static final int realtabcontent=0x7f050049;
         public static final int round=0x7f050001;
-        public static final int start_img=0x7f050053;
-        public static final int tab_equ_layout=0x7f050057;
-        public static final int tab_fam_layout=0x7f050060;
-        public static final int tab_hel_layout=0x7f05005d;
-        public static final int tab_mall_layout=0x7f05005a;
+        public static final int start_img=0x7f050058;
+        public static final int tab_equ_layout=0x7f05005c;
+        public static final int tab_fam_layout=0x7f050065;
+        public static final int tab_hel_layout=0x7f050062;
+        public static final int tab_mall_layout=0x7f05005f;
         public static final int textView1=0x7f050022;
         public static final int textView2=0x7f050024;
-        public static final int textview=0x7f050056;
+        public static final int textview=0x7f05005b;
         public static final int top_left_img=0x7f050026;
         public static final int top_med_layout=0x7f050027;
         public static final int top_right_1_img=0x7f05002b;
@@ -227,9 +241,9 @@ containing a value of this type.
         public static final int top_right_4_img=0x7f05002e;
         public static final int top_turn_left_img=0x7f050028;
         public static final int top_turn_right_img=0x7f05002a;
-        public static final int user_icon_img=0x7f050047;
-        public static final int username=0x7f050049;
-        public static final int viewpager_content=0x7f050063;
+        public static final int user_icon_img=0x7f05004c;
+        public static final int username=0x7f05004e;
+        public static final int viewpager_content=0x7f050068;
     }
     public static final class layout {
         public static final int chat_listview_item=0x7f030000;
@@ -254,36 +268,38 @@ containing a value of this type.
         public static final int fragment_tab_activity_top=0x7f030013;
         public static final int fragment_tab_main=0x7f030014;
         public static final int handler_item=0x7f030015;
-        public static final int main_item_view=0x7f030016;
-        public static final int main_tab_layout=0x7f030017;
-        public static final int member_gridview_item=0x7f030018;
-        public static final int member_listview_item=0x7f030019;
-        public static final int my_fragment=0x7f03001a;
-        public static final int privilege_listview_item=0x7f03001b;
-        public static final int privilege_manage=0x7f03001c;
-        public static final int start_activity=0x7f03001d;
-        public static final int tab_item_view=0x7f03001e;
-        public static final int tab_viewpager_tab1=0x7f03001f;
-        public static final int tab_viewpager_tab2=0x7f030020;
-        public static final int tab_viewpager_tab3=0x7f030021;
-        public static final int tab_viewpager_tab4=0x7f030022;
-        public static final int viewpager_activity_bottom=0x7f030023;
-        public static final int viewpager_activity_main=0x7f030024;
-        public static final int viewpager_activity_top=0x7f030025;
+        public static final int login=0x7f030016;
+        public static final int main_item_view=0x7f030017;
+        public static final int main_tab_layout=0x7f030018;
+        public static final int member_gridview_item=0x7f030019;
+        public static final int member_listview_item=0x7f03001a;
+        public static final int my_fragment=0x7f03001b;
+        public static final int privilege_listview_item=0x7f03001c;
+        public static final int privilege_manage=0x7f03001d;
+        public static final int start_activity=0x7f03001e;
+        public static final int tab_item_view=0x7f03001f;
+        public static final int tab_viewpager_tab1=0x7f030020;
+        public static final int tab_viewpager_tab2=0x7f030021;
+        public static final int tab_viewpager_tab3=0x7f030022;
+        public static final int tab_viewpager_tab4=0x7f030023;
+        public static final int viewpager_activity_bottom=0x7f030024;
+        public static final int viewpager_activity_main=0x7f030025;
+        public static final int viewpager_activity_top=0x7f030026;
     }
     public static final class menu {
         public static final int main=0x7f0a0000;
     }
     public static final class string {
         public static final int action_settings=0x7f080001;
-        public static final int activity_data_2_fragment=0x7f080007;
+        public static final int activity_data_2_fragment=0x7f080008;
         public static final int app_name=0x7f080000;
-        public static final int fragment_callbacks_text=0x7f080005;
-        public static final int fragment_dynamic_text=0x7f080004;
-        public static final int fragment_kinds_life_text=0x7f080006;
-        public static final int fragment_static_text=0x7f080003;
-        public static final int fragment_tab_text=0x7f080008;
+        public static final int fragment_callbacks_text=0x7f080006;
+        public static final int fragment_dynamic_text=0x7f080005;
+        public static final int fragment_kinds_life_text=0x7f080007;
+        public static final int fragment_static_text=0x7f080004;
+        public static final int fragment_tab_text=0x7f080009;
         public static final int hello_world=0x7f080002;
+        public static final int login=0x7f080003;
     }
     public static final class style {
         /** 
@@ -296,34 +312,11 @@ containing a value of this type.
 
 
 
-
-
-
-
-
-
-
-
-
-
-
     
 
             Theme customizations available in newer API levels can go in
             res/values-vXX/styles.xml, while customizations related to
             backward-compatibility can go here.
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -348,6 +341,7 @@ containing a value of this type.
  All customizations that are NOT specific to a particular API-level can go here. 
          */
         public static final int AppTheme=0x7f090001;
+        public static final int LoginCheckboxTheme=0x7f090007;
         public static final int main_background_style=0x7f090002;
         public static final int main_listview_layout_style=0x7f090003;
         public static final int tab_4_text=0x7f090006;

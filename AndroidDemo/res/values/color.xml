@@ -8,5 +8,8 @@
     <color name="main_tab_text_select">#1DCAAC</color>
     <color name="main_tab_text_normal">#CDCDCD</color>
     <color name="GrayLight">#EEEEEE</color>
+    <color name="bar_nor">#1DCAAC</color>
+    <color name="bar_sel">#3BD9BE</color>
+    
 
 </resources>
