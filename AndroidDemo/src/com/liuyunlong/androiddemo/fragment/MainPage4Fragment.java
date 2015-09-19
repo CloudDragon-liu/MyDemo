@@ -77,7 +77,7 @@ public class MainPage4Fragment extends Fragment implements OnClickListener, OnIt
 	}
 
 	private void initData() {
-		members.add(new Member("家庭相册", "", BitmapFactory.decodeResource(getResources(), R.drawable.daughter)));
+		members.add(new Member("时光记忆", "", BitmapFactory.decodeResource(getResources(), R.drawable.daughter)));
 		members.add(new Member("家庭健康", "", BitmapFactory.decodeResource(getResources(), R.drawable.son)));
 		members.add(new Member("宝宝教育", "", BitmapFactory.decodeResource(getResources(), R.drawable.daughter)));
 		members.add(new Member("添加", "", BitmapFactory.decodeResource(getResources(), R.drawable.add_family_member)));

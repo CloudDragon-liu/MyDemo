@@ -9,12 +9,14 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.liuyunlong.androiddemo.R;
 import com.liuyunlong.androiddemo.activity.PrivilegeManageActivity;
 import com.liuyunlong.androiddemo.activity.StartActivity;
+import com.liuyunlong.androiddemo.dialog.AddMemberDialog;
 import com.liuyunlong.androiddemo.entity.Member;
 import com.liuyunlong.androiddemo.utils.Logger;
 
@@ -55,6 +57,7 @@ public class MemberListViewAdapter extends BaseAdapter {
 	@Override
 	public View getView(int position, View convertView, ViewGroup parent) {
 		final Member member = members.get(position);
+		final AddMemberDialog dialog = new AddMemberDialog(mContext, "修改备注名", null, "请输入备注名");
 
 		ViewHolder viewHolder = null;
 		if (null == convertView) {
@@ -77,7 +80,25 @@ public class MemberListViewAdapter extends BaseAdapter {
 
 						@Override
 						public void onClick(View v) {
-							Logger.showToast(mContext, "修改备注名");
+							dialog.show();
+							EditText editText = dialog.getEditText();
+							TextView okTextView = dialog.getmOkTv();
+							TextView giveUpTextView = dialog.getmGiveUpTv();
+							final String nickname = editText.getText().toString();
+							okTextView.setOnClickListener(new OnClickListener() {
+
+								@Override
+								public void onClick(View v) {
+									Logger.showToast(mContext, nickname);
+								}
+							});
+							giveUpTextView.setOnClickListener(new OnClickListener() {
+
+								@Override
+								public void onClick(View v) {
+									dialog.dismiss();
+								}
+							});
 						}
 					});
 			convertView.setTag(viewHolder);
