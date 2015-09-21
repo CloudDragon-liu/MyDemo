@@ -77,6 +77,7 @@ public class MainTabActivity extends FragmentActivity {
 		// 实例化TabHost对象，得到TabHost
 		mTabHost = (FragmentTabHost) this.findViewById(android.R.id.tabhost);
 		mTabHost.setup(this, getSupportFragmentManager(), R.id.realtabcontent);
+		mTabHost.getTabWidget().setDividerDrawable(null); // 去掉中间的默认分割线
 		mTabHost.setOnTabChangedListener(new OnTabChangeListener() {
 
 			@Override

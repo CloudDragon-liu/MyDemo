@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <com.liuyunlong.androiddemo.widget.RoundImageView
+        android:id="@+id/file_store_iv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="10dp"
+        android:src="@drawable/daughter" />
+
+    <TextView
+        android:id="@+id/file_store_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:text="简单介绍" />
+
+    <TextView
+        android:id="@+id/file_store__brief_iv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/file_store__brief_text"
+        android:visibility="invisible" />
+
+    <EditText
+        android:id="@+id/file_edit_et"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+    </EditText>
+
+    <Button
+        android:id="@+id/file_read_write_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="写入并读取" />
+
+    <TextView
+        android:id="@+id/file_read_content"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TextView" />
+
+</LinearLayout>

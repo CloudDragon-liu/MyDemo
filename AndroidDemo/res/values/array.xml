@@ -9,6 +9,7 @@
         <item>FragmentPagerAdapter + viewPager实现Tab</item>
         <item>ViewPagerIndicator + viewPager实现Tab</item>
         <item>FragmenTabHost</item>
+        <item>Android数据存储</item>
     </string-array>
     <string-array name="main_brief_list">
         <item>每隔一段时间执行，条件满足后退出</item>
@@ -18,12 +19,19 @@
         <item>FragmentPagerAdapter + viewPager实现Tab</item>
         <item>ViewPagerIndicator 为一个第三方的开源框架</item>
         <item>FragmentTabHost实现Tab效果</item>
+        <item>介绍Android中四大数据存储方式</item>
     </string-array>
     <string-array name="main_tab_text">
         <item>学习记录</item>
         <item>家庭相册</item>
         <item>健康管理</item>
         <item>家庭互动</item>
+    </string-array>
+    <string-array name="data_store_tab_text">
+        <item>SharedPre</item>
+        <item>SQLite</item>
+        <item>Content Pro</item>
+        <item>File</item>
     </string-array>
 
 </resources>

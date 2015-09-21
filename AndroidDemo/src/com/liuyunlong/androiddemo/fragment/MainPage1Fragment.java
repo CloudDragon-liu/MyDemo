@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.liuyunlong.androiddemo.R;
+import com.liuyunlong.androiddemo.activity.DataStoreActivity;
 import com.liuyunlong.androiddemo.activity.FragmentBaseItemActivity;
 import com.liuyunlong.androiddemo.activity.FragmentPagerAdapterTabActivity;
 import com.liuyunlong.androiddemo.activity.FragmentTabItemActivity;
@@ -145,6 +146,11 @@ public class MainPage1Fragment extends Fragment implements OnItemClickListener, 
 			break;
 		case ConstantUtils.NUMBER.SIX: // FragmentTabHost
 			intent.setClass(mContext, MainTabActivity.class);
+			intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+			startActivity(intent);
+			break;
+		case ConstantUtils.NUMBER.SEVEN: // Android 数据存储
+			intent.setClass(mContext, DataStoreActivity.class);
 			intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
 			startActivity(intent);
 			break;

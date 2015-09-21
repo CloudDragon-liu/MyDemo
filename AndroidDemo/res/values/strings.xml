@@ -8,6 +8,8 @@
     <string name="user_center">个人中心</string>
     <string name="add_member">添加家庭成员</string>
     <string name="search">查找</string>
+
+    <!-- **************************************************************************************** -->
     <string name="fragment_static_text">静态加载：首先要自定义一个fragment，继承fragment，该fragment有自己的控件,可以独立响应点击事件。
         在其他视图中应用该fragment即可，在布局文件中通过标签加载的fragment即为为静态加载fragment（个人在viewpager中的一个view中静态加载一个fragment遇到一个问题是需要将宽度设为match_parent）。
         该fragment可被应用到任何布局中，其中的控件和事件不变，
@@ -36,6 +38,23 @@
         \n 可通过在Fragment中定义一个接口，在宿主Activity实现该接口，通过这个接口传值
         \n\n 此外还可通过get和set方法传值，activity中set，在fragment中get	</string>
     <string name="fragment_tab_text">        fragment实现Tab每个Tab为一个Fragment，内部独立控件响应自己的事件。
-        \n 实现：每次点击都隐藏所有transaction.hide(),具体需要哪一个的时候再transaction.show(),如果为null需要先初始化</string>
+        \n 实现：每次点击都隐藏所有transaction.hide(),具体需要哪一个的时候再transaction.show(),如果为null需要先初始化	</string>
+    <string name="shared_preferenece_brief">        1. 一种轻型的数据存储方式\n
+        2. 基于xml的文件存储（key-value）形式 \n
+        3. 通常用来存储一些比较简单的配置信息 \n
+        4. 存储简单的数据类型（string int Boolean）\n\n
+        -- SharedPerference对象本身只支持数据的读取，存储和修改需要通过Editor对象\n\n
+        -- 实现步骤：\n
+        1. 获取SharedPerference对象\n
+        2. 获取SharedPerference.Editor对象\n
+        3. 通过put方法保存数据\n
+        4. 通过Editor的commit方法保存	</string>
+    <string name="sqllite_brief_text">        1. 支持高达2TB的数据库\n
+        2. 以单个文件形式存在\n
+        3. 以B-Tree的数据结构形式存储在磁盘\n\n
+        支持数据类型：\n
+        null, integer, real(布尔型), text(字符串),blob(二进制)\n	</string>
+    <string name="file_store__brief_text">        1. file存储路径包括内置（data/data目录）和scdard（目录），如果是要使用外置目录，需要配置外置文件目录的访问权限\n
+        2. 待续。。。</string>
 
 </resources>

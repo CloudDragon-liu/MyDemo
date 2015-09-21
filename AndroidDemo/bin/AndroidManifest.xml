@@ -33,6 +33,7 @@
         <activity android:name="com.liuyunlong.androiddemo.activity.LoginActivity" />
         <activity android:name="com.liuyunlong.androiddemo.activity.UserCenterActivity" />
         <activity android:name="com.liuyunlong.androiddemo.activity.AddMemberActivity" />
+        <activity android:name="com.liuyunlong.androiddemo.activity.DataStoreActivity" />
     </application>
 
 </manifest>
