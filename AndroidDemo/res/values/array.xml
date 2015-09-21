@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
+    <!-- ******************************title**************************** -->
     <string-array name="main_title_list">
         <item>定时任务</item>
         <item>Fragment</item>
@@ -10,7 +11,11 @@
         <item>ViewPagerIndicator + viewPager实现Tab</item>
         <item>FragmenTabHost</item>
         <item>Android数据存储</item>
+        <item>Android四大组件</item>
     </string-array>
+
+    <!-- ******************************************brief************************************ -->
+
     <string-array name="main_brief_list">
         <item>每隔一段时间执行，条件满足后退出</item>
         <item>Fragment基础：拥有自己独立的布局和生命周期，可以将Fragment定义到多个Activity中</item>
@@ -20,7 +25,11 @@
         <item>ViewPagerIndicator 为一个第三方的开源框架</item>
         <item>FragmentTabHost实现Tab效果</item>
         <item>介绍Android中四大数据存储方式</item>
+        <item>Activity, Service, Content Provider, BroadCast Receiver</item>
     </string-array>
+
+    <!-- ********************************others**************************************************** -->
+
     <string-array name="main_tab_text">
         <item>学习记录</item>
         <item>家庭相册</item>
@@ -32,6 +41,12 @@
         <item>SQLite</item>
         <item>Content Pro</item>
         <item>File</item>
+    </string-array>
+    <string-array name="components_tab_text">
+        <item>Activity</item>
+        <item>Service</item>
+        <item>Content Provider</item>
+        <item>BroadCast Receiver</item>
     </string-array>
 
 </resources>

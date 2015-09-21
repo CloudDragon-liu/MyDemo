@@ -23,7 +23,7 @@
         android:id="@+id/file_store__brief_iv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/file_store__brief_text"
+        android:text="@string/file_store_brief_text"
         android:visibility="invisible" />
 
     <EditText

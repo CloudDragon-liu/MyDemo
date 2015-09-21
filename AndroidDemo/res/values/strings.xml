@@ -54,7 +54,19 @@
         3. 以B-Tree的数据结构形式存储在磁盘\n\n
         支持数据类型：\n
         null, integer, real(布尔型), text(字符串),blob(二进制)\n	</string>
-    <string name="file_store__brief_text">        1. file存储路径包括内置（data/data目录）和scdard（目录），如果是要使用外置目录，需要配置外置文件目录的访问权限\n
-        2. 待续。。。</string>
+    <string name="file_store_brief_text">        1. file存储路径包括内置（data/data目录）和scdard（目录），如果是要使用外置目录，需要配置外置文件目录的访问权限\n
+        2. 待续。。。	</string>
+    <string name="content_provider_brief_text">        1. 应用程序之间的数据共享\n
+        2. 如何实现：\n
+       		 2.1 继承抽象类ContentProvider实现一系列对数据的增删改查\n
+       		 2.2 在AndroidManifest.xml中注册（authorities必须是全局唯一的）\n
+       		 
+       	3. 何为Uri ？(通用资源标识符)\n
+       	客户端通过Uri去访问ContentProvider中的数据\n
+       	content://com.xxx.provider/music/#()\n
+       	如何解析Uri?\n
+       	UriMatch类 \n
+       	ContentResolver操作ContentProvider中的数据\n
+       	自定义ContentProvider比较麻烦，一般也不需要，只需要能够访问其他的ContentProvider即可</string>
 
 </resources>

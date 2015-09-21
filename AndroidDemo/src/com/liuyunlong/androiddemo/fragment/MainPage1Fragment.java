@@ -3,19 +3,6 @@ package com.liuyunlong.androiddemo.fragment;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.liuyunlong.androiddemo.R;
-import com.liuyunlong.androiddemo.activity.DataStoreActivity;
-import com.liuyunlong.androiddemo.activity.FragmentBaseItemActivity;
-import com.liuyunlong.androiddemo.activity.FragmentPagerAdapterTabActivity;
-import com.liuyunlong.androiddemo.activity.FragmentTabItemActivity;
-import com.liuyunlong.androiddemo.activity.HandlerItemActivity;
-import com.liuyunlong.androiddemo.activity.MainTabActivity;
-import com.liuyunlong.androiddemo.activity.ViewPagerItemActivity;
-import com.liuyunlong.androiddemo.adpter.MainListViewAdapter;
-import com.liuyunlong.androiddemo.entity.MainItem;
-import com.liuyunlong.androiddemo.utils.ConstantUtils;
-import com.liuyunlong.androiddemo.utils.Logger;
-
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.BitmapFactory;
@@ -31,6 +18,20 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
+
+import com.liuyunlong.androiddemo.R;
+import com.liuyunlong.androiddemo.activity.AndroidComponentsActivity;
+import com.liuyunlong.androiddemo.activity.DataStoreActivity;
+import com.liuyunlong.androiddemo.activity.FragmentBaseItemActivity;
+import com.liuyunlong.androiddemo.activity.FragmentPagerAdapterTabActivity;
+import com.liuyunlong.androiddemo.activity.FragmentTabItemActivity;
+import com.liuyunlong.androiddemo.activity.HandlerItemActivity;
+import com.liuyunlong.androiddemo.activity.MainTabActivity;
+import com.liuyunlong.androiddemo.activity.ViewPagerItemActivity;
+import com.liuyunlong.androiddemo.adpter.MainListViewAdapter;
+import com.liuyunlong.androiddemo.entity.MainItem;
+import com.liuyunlong.androiddemo.utils.ConstantUtils;
+import com.liuyunlong.androiddemo.utils.Logger;
 
 /** @author liuyunlong
   * @date 2015-9-15 下午11:52:46 
@@ -151,6 +152,11 @@ public class MainPage1Fragment extends Fragment implements OnItemClickListener, 
 			break;
 		case ConstantUtils.NUMBER.SEVEN: // Android 数据存储
 			intent.setClass(mContext, DataStoreActivity.class);
+			intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+			startActivity(intent);
+			break;
+		case ConstantUtils.NUMBER.EIGHT: // Android 四大组件
+			intent.setClass(mContext, AndroidComponentsActivity.class);
 			intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
 			startActivity(intent);
 			break;

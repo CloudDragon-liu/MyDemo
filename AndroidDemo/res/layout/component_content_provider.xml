@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <com.liuyunlong.androiddemo.widget.RoundImageView
+        android:id="@+id/component_activity_icon"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="10dp"
+        android:src="@drawable/daughter" />
+
+    <TextView
+        android:id="@+id/component_activity_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:text="简介" />
+
+    <TextView
+        android:id="@+id/component_activity_brief"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/content_provider_brief_text"
+        android:visibility="gone" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" >
+
+        <Button
+            android:id="@+id/qurey_btn"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="查询联系人" />
+
+        <Button
+            android:id="@+id/add_btn"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="增加联系人" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/result"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="" />
+
+</LinearLayout>
