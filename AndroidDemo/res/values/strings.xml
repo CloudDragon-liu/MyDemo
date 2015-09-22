@@ -8,6 +8,8 @@
     <string name="user_center">个人中心</string>
     <string name="add_member">添加家庭成员</string>
     <string name="search">查找</string>
+    <string name="confirm">确认</string>
+    <string name="cancel">取消</string>
 
     <!-- **************************************************************************************** -->
     <string name="fragment_static_text">静态加载：首先要自定义一个fragment，继承fragment，该fragment有自己的控件,可以独立响应点击事件。

@@ -21,6 +21,20 @@ public class ConstantUtils {
 	}
 
 	/**
+	 * 对话框类型
+	 * @author liuyunlong
+	 *2015-9-22 下午3:20:21
+	 */
+	public static class DIALOG_TYPE {
+		public static final int NORMAL = 0;
+		public static final int WITH_CHECKBOX = 1;
+		public static final int WITH_EDITTEXT = 2;
+		public static final int WITH_PROGRESSBAR = 3;
+		public static final int WITH_CHECKBOX_PROGRESSBAR = 4;
+		public static final int WITH_EDITTEXT_PROGRESSBAR = 5;
+	}
+
+	/**
 	 * handler消息
 	 * @author liuyunlong
 	 *2015-9-16 下午3:14:14

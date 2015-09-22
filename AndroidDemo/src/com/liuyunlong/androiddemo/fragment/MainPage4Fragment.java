@@ -5,6 +5,8 @@ import java.util.List;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.content.SharedPreferences.Editor;
 import android.graphics.BitmapFactory;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
@@ -59,6 +61,10 @@ public class MainPage4Fragment extends Fragment implements OnClickListener, OnIt
 
 	private List<ChatItem> mChatItems = new ArrayList<ChatItem>();
 
+	private SharedPreferences sp;
+
+	private Editor editor;
+
 	/**更多*/
 	private PopupWindow mPopWin;
 
@@ -85,10 +91,13 @@ public class MainPage4Fragment extends Fragment implements OnClickListener, OnIt
 		mChatItems.add(new ChatItem("女儿", "今晚没饭吃！", "上午11:22", "1", BitmapFactory.decodeResource(getResources(), R.drawable.daughter)));
 		mChatItems.add(new ChatItem("女儿", "现在回来吗？", "上午11:22", "20", BitmapFactory.decodeResource(getResources(), R.drawable.daughter)));
 		mChatItems.add(new ChatItem("儿子", "我打球去了？我打球去了？我打球去了？我打球去了？我打球去了？我打球去了？", "下午15:22", "99+", BitmapFactory.decodeResource(getResources(), R.drawable.son)));
+
+		mContext = getActivity();
+		sp = mContext.getSharedPreferences("mysp", Context.MODE_PRIVATE + Context.MODE_APPEND);
+		editor = sp.edit();
 	}
 
 	private void initView(View view) {
-		mContext = getActivity();
 		mHeadTextView = (TextView) view.findViewById(R.id.fragment_layout_top_tv);
 		mHeadTextView.setText(getResources().getStringArray(R.array.main_tab_text)[3]);
 		mTopLeftIcon = (ImageView) view.findViewById(R.id.top_left_img);
@@ -110,11 +119,10 @@ public class MainPage4Fragment extends Fragment implements OnClickListener, OnIt
 
 	@Override
 	public void onClick(View v) {
-		boolean isLogin = true; // 模拟已经登录
 		Intent intent = new Intent();
 		switch (v.getId()) {
 		case R.id.top_left_img:
-			intent.setClass(mContext, isLogin ? UserCenterActivity.class : LoginActivity.class);
+			intent.setClass(mContext, sp.getBoolean("isLogin", false) ? UserCenterActivity.class : LoginActivity.class);
 			startActivity(intent);
 			break;
 		case R.id.fragment_layout_top_tv: // 切换家庭

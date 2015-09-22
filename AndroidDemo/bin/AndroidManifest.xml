@@ -9,11 +9,11 @@
         android:targetSdkVersion="18" />
 
     <uses-permission android:name="android.permission.READ_CONTACTS" />
-    <uses-permission android:name="android.permission.WRITE_CONTACTS"/>
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
-    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
-    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE"/>
-    <uses-permission android:name="android.permission.GET_TASKS"/>
+    <uses-permission android:name="android.permission.WRITE_CONTACTS" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission android:name="android.permission.GET_TASKS" />
 
     <application
         android:allowBackup="true"
@@ -42,6 +42,7 @@
         <activity android:name="com.liuyunlong.androiddemo.activity.AddMemberActivity" />
         <activity android:name="com.liuyunlong.androiddemo.activity.DataStoreActivity" />
         <activity android:name="com.liuyunlong.androiddemo.activity.AndroidComponentsActivity" />
+        <activity android:name="com.liuyunlong.androiddemo.activity.GestureActivity" />
     </application>
 
 </manifest>
