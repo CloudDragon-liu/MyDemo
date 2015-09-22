@@ -22,6 +22,7 @@ import android.widget.TextView;
 import com.liuyunlong.androiddemo.R;
 import com.liuyunlong.androiddemo.activity.AndroidComponentsActivity;
 import com.liuyunlong.androiddemo.activity.DataStoreActivity;
+import com.liuyunlong.androiddemo.activity.DataTimePickerActivity;
 import com.liuyunlong.androiddemo.activity.FragmentBaseItemActivity;
 import com.liuyunlong.androiddemo.activity.FragmentPagerAdapterTabActivity;
 import com.liuyunlong.androiddemo.activity.FragmentTabItemActivity;
@@ -169,6 +170,11 @@ public class MainPage1Fragment extends Fragment implements OnItemClickListener, 
 			break;
 		case ConstantUtils.NUMBER.TEN: // spinner
 			intent.setClass(mContext, SpinnerActivity.class);
+			intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+			startActivity(intent);
+			break;
+		case ConstantUtils.NUMBER.ELEVEN: // DataPicker
+			intent.setClass(mContext, DataTimePickerActivity.class);
 			intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
 			startActivity(intent);
 			break;

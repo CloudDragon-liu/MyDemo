@@ -14,6 +14,7 @@
         <item>Android四大组件</item>
         <item>Android手势识别</item>
         <item>Spinner</item>
+        <item>日期和时间选择器</item>
     </string-array>
 
     <!-- ******************************************brief************************************ -->
@@ -30,6 +31,7 @@
         <item>Activity, Service, Content Provider, BroadCast Receiver</item>
         <item>GestureDetector和GestureOverlayView</item>
         <item>Spinner实现二级联动</item>
+        <item>DataPicker and TimePicker</item>
     </string-array>
 
     <!-- ********************************others**************************************************** -->

@@ -44,6 +44,7 @@
         <activity android:name="com.liuyunlong.androiddemo.activity.AndroidComponentsActivity" />
         <activity android:name="com.liuyunlong.androiddemo.activity.GestureActivity" />
         <activity android:name="com.liuyunlong.androiddemo.activity.SpinnerActivity" />
+        <activity android:name="com.liuyunlong.androiddemo.activity.DataTimePickerActivity" />
     </application>
 
 </manifest>
