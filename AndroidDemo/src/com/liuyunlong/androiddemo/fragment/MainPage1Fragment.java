@@ -28,6 +28,7 @@ import com.liuyunlong.androiddemo.activity.FragmentTabItemActivity;
 import com.liuyunlong.androiddemo.activity.GestureActivity;
 import com.liuyunlong.androiddemo.activity.HandlerItemActivity;
 import com.liuyunlong.androiddemo.activity.MainTabActivity;
+import com.liuyunlong.androiddemo.activity.SpinnerActivity;
 import com.liuyunlong.androiddemo.activity.ViewPagerItemActivity;
 import com.liuyunlong.androiddemo.adpter.MainListViewAdapter;
 import com.liuyunlong.androiddemo.entity.MainItem;
@@ -163,6 +164,11 @@ public class MainPage1Fragment extends Fragment implements OnItemClickListener, 
 			break;
 		case ConstantUtils.NUMBER.NINE: // Android 手势识别
 			intent.setClass(mContext, GestureActivity.class);
+			intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+			startActivity(intent);
+			break;
+		case ConstantUtils.NUMBER.TEN: // spinner
+			intent.setClass(mContext, SpinnerActivity.class);
 			intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
 			startActivity(intent);
 			break;
