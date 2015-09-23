@@ -42,6 +42,7 @@ public class SpinnerActivity extends Activity {
 	}
 
 	private void initData() {
+		// 设置省级数据
 		provinceAdapter = ArrayAdapter.createFromResource(this, R.array.province, android.R.layout.simple_spinner_item); // 设置默认适配器数据
 		provinceAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item); // 设置下拉风格
 		mSpinnerProvince.setAdapter(provinceAdapter);
@@ -59,6 +60,7 @@ public class SpinnerActivity extends Activity {
 				} else if (pro != null && pro.equals("山西省")) {
 					cityAdapter = ArrayAdapter.createFromResource(SpinnerActivity.this, R.array.shx, android.R.layout.simple_spinner_item);
 				}
+				// 设置城市数据
 				mSpinnerCity.setAdapter(cityAdapter);
 				cityAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 				mSpinnerCity.setOnItemSelectedListener(new OnItemSelectedListener() {

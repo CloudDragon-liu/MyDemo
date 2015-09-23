@@ -21,14 +21,17 @@ import android.widget.TextView;
 
 import com.liuyunlong.androiddemo.R;
 import com.liuyunlong.androiddemo.activity.AndroidComponentsActivity;
+import com.liuyunlong.androiddemo.activity.AutoCompeleteActivity;
 import com.liuyunlong.androiddemo.activity.DataStoreActivity;
 import com.liuyunlong.androiddemo.activity.DataTimePickerActivity;
+import com.liuyunlong.androiddemo.activity.DialogActivity;
 import com.liuyunlong.androiddemo.activity.FragmentBaseItemActivity;
 import com.liuyunlong.androiddemo.activity.FragmentPagerAdapterTabActivity;
 import com.liuyunlong.androiddemo.activity.FragmentTabItemActivity;
 import com.liuyunlong.androiddemo.activity.GestureActivity;
 import com.liuyunlong.androiddemo.activity.HandlerItemActivity;
 import com.liuyunlong.androiddemo.activity.MainTabActivity;
+import com.liuyunlong.androiddemo.activity.SeekBarActivity;
 import com.liuyunlong.androiddemo.activity.SpinnerActivity;
 import com.liuyunlong.androiddemo.activity.ViewPagerItemActivity;
 import com.liuyunlong.androiddemo.adpter.MainListViewAdapter;
@@ -175,6 +178,21 @@ public class MainPage1Fragment extends Fragment implements OnItemClickListener, 
 			break;
 		case ConstantUtils.NUMBER.ELEVEN: // DataPicker
 			intent.setClass(mContext, DataTimePickerActivity.class);
+			intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+			startActivity(intent);
+			break;
+		case ConstantUtils.NUMBER.TWELVE: // Dialog
+			intent.setClass(mContext, DialogActivity.class);
+			intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+			startActivity(intent);
+			break;
+		case ConstantUtils.NUMBER.THIRTEEN: // autoCompelete TextView
+			intent.setClass(mContext, AutoCompeleteActivity.class);
+			intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+			startActivity(intent);
+			break;
+		case ConstantUtils.NUMBER.FOURTEEN: // seekbar
+			intent.setClass(mContext, SeekBarActivity.class);
 			intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
 			startActivity(intent);
 			break;

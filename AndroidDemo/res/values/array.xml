@@ -15,6 +15,9 @@
         <item>Android手势识别</item>
         <item>Spinner</item>
         <item>日期和时间选择器</item>
+        <item>Dialog</item>
+        <item>AutoCompelete TextView</item>
+        <item>SeekBar</item>
     </string-array>
 
     <!-- ******************************************brief************************************ -->
@@ -32,6 +35,9 @@
         <item>GestureDetector和GestureOverlayView</item>
         <item>Spinner实现二级联动</item>
         <item>DataPicker and TimePicker</item>
+        <item>各种dialog类型，包括有单选和复选框等</item>
+        <item>自动提示内容</item>
+        <item>基本使用，实现图片切换，亮度调节</item>
     </string-array>
 
     <!-- ********************************others**************************************************** -->
@@ -82,6 +88,13 @@
     </string-array>
     <string-array name="moren">
         <item>-城市-</item>
+    </string-array>
+    <string-array name="auto_compelete">
+        <item>mmgff</item>
+        <item>mmdfs</item>
+        <item>mmfdgsre</item>
+        <item>mmdgrd</item>
+        <item>你好吗</item>
     </string-array>
 
 </resources>

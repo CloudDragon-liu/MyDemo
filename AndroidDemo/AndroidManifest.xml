@@ -45,6 +45,9 @@
         <activity android:name="com.liuyunlong.androiddemo.activity.GestureActivity" />
         <activity android:name="com.liuyunlong.androiddemo.activity.SpinnerActivity" />
         <activity android:name="com.liuyunlong.androiddemo.activity.DataTimePickerActivity" />
+        <activity android:name="com.liuyunlong.androiddemo.activity.DialogActivity" />
+        <activity android:name="com.liuyunlong.androiddemo.activity.AutoCompeleteActivity" />
+        <activity android:name="com.liuyunlong.androiddemo.activity.SeekBarActivity" />
     </application>
 
 </manifest>
