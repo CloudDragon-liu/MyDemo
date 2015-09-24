@@ -118,7 +118,7 @@ public class FragmentBaseItemActivity extends FragmentActivity implements OnClic
 		views.add(view2);
 		views.add(view3);
 		views.add(view4);
-		adapter = new ViewPagerAdapter(mContext, views);
+		adapter = new ViewPagerAdapter(mContext, views, null);
 		viewPager.setAdapter(adapter);
 	}
 

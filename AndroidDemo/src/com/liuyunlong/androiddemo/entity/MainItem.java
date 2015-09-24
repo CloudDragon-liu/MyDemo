@@ -18,6 +18,17 @@ public class MainItem {
 
 	private Map<String, Object> extras;
 
+	public MainItem() {
+		super();
+	}
+
+	public MainItem(String title, String brief, Bitmap bitmap) {
+		super();
+		this.title = title;
+		this.brief = brief;
+		this.bitmap = bitmap;
+	}
+
 	public String getTitle() {
 		return title;
 	}

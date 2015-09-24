@@ -68,7 +68,7 @@ public class ViewPagerItemActivity extends Activity implements OnClickListener, 
 		mViews.add(view_3);
 		mViews.add(view_4);
 
-		adapter = new ViewPagerAdapter(this, mViews);
+		adapter = new ViewPagerAdapter(this, mViews, null);
 		viewPager.setAdapter(adapter);
 		viewPager.setOnPageChangeListener(this);
 	}

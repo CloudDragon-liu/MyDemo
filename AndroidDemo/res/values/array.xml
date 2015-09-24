@@ -50,7 +50,7 @@
 
     <string-array name="main_tab_text">
         <item>学习记录</item>
-        <item>家庭相册</item>
+        <item>个人收藏</item>
         <item>健康管理</item>
         <item>家庭互动</item>
     </string-array>
@@ -101,6 +101,12 @@
         <item>mmfdgsre</item>
         <item>mmdgrd</item>
         <item>你好吗</item>
+    </string-array>
+    <string-array name="collect_page_title">
+        <item>技术</item>
+        <item>新闻</item>
+        <item>体育</item>
+        <item>百度</item>
     </string-array>
 
 </resources>

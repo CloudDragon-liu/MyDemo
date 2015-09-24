@@ -17,10 +17,13 @@ public class ViewPagerAdapter extends PagerAdapter {
 
 	private Context mContext;
 
-	public ViewPagerAdapter(Context mContext, List<View> views) {
+	private List<String> titleList;
+
+	public ViewPagerAdapter(Context mContext, List<View> views, List<String> titles) {
 		super();
-		this.views = views;
 		this.mContext = mContext;
+		this.views = views;
+		this.titleList = titles;
 	}
 
 	@Override
@@ -42,5 +45,13 @@ public class ViewPagerAdapter extends PagerAdapter {
 	public Object instantiateItem(ViewGroup container, int position) {
 		container.addView(views.get(position));
 		return views.get(position);
+	}
+
+	/**
+	 * 设置ViewPage的标题
+	 */
+	@Override
+	public CharSequence getPageTitle(int position) {
+		return titleList != null ? titleList.get(position) : "null";
 	}
 }
