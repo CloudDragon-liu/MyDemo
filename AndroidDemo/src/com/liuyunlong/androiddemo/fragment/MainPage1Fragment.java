@@ -34,6 +34,7 @@ import com.liuyunlong.androiddemo.activity.HandlerItemActivity;
 import com.liuyunlong.androiddemo.activity.MainTabActivity;
 import com.liuyunlong.androiddemo.activity.MenuActivity;
 import com.liuyunlong.androiddemo.activity.SeekBarActivity;
+import com.liuyunlong.androiddemo.activity.SlidingDrawerActivity;
 import com.liuyunlong.androiddemo.activity.SpinnerActivity;
 import com.liuyunlong.androiddemo.activity.ViewPagerItemActivity;
 import com.liuyunlong.androiddemo.adpter.MainListViewAdapter;
@@ -205,6 +206,11 @@ public class MainPage1Fragment extends Fragment implements OnItemClickListener, 
 			break;
 		case ConstantUtils.NUMBER.SIXTEEN: // Menu
 			intent.setClass(mContext, MenuActivity.class);
+			intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+			startActivity(intent);
+			break;
+		case ConstantUtils.NUMBER.SEVENTEEN: // slidingDrawer
+			intent.setClass(mContext, SlidingDrawerActivity.class);
 			intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
 			startActivity(intent);
 			break;

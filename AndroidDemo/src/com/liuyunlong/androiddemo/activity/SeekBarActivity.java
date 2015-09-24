@@ -3,14 +3,21 @@ package com.liuyunlong.androiddemo.activity;
 import android.app.Activity;
 import android.os.Bundle;
 import android.text.method.ScrollingMovementMethod;
+import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
+import android.widget.ExpandableListView;
 import android.widget.ImageView;
 import android.widget.SeekBar;
+import android.widget.ExpandableListView.OnChildClickListener;
+import android.widget.ExpandableListView.OnGroupClickListener;
+import android.widget.ExpandableListView.OnGroupCollapseListener;
+import android.widget.ExpandableListView.OnGroupExpandListener;
 import android.widget.SeekBar.OnSeekBarChangeListener;
 import android.widget.TextView;
 
 import com.liuyunlong.androiddemo.R;
+import com.liuyunlong.androiddemo.adpter.MyExpandableListAdapter;
 
 /** 
 * @author  : liuyunlong
@@ -25,6 +32,10 @@ public class SeekBarActivity extends Activity implements OnSeekBarChangeListener
 	private ImageView barImageView;
 
 	private int imgs[] = new int[] { R.drawable.daughter, R.drawable.son, R.drawable.daughter, R.drawable.son, R.drawable.daughter };
+
+	private ExpandableListView expandableListView;
+
+	private MyExpandableListAdapter adapter;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -45,6 +56,39 @@ public class SeekBarActivity extends Activity implements OnSeekBarChangeListener
 		textBar.setOnSeekBarChangeListener(this);
 		imgBar.setOnSeekBarChangeListener(this);
 		lightBar.setOnSeekBarChangeListener(this);
+		/*******************************ExpandableListView**************/
+		expandableListView = (ExpandableListView) this.findViewById(R.id.expandableListView1);
+		adapter = new MyExpandableListAdapter(this, null, null);
+		expandableListView.setAdapter(adapter);
+		registerForContextMenu(expandableListView);
+		expandableListView.setOnGroupClickListener(new OnGroupClickListener() {
+
+			@Override
+			public boolean onGroupClick(ExpandableListView parent, View v, int groupPosition, long id) {
+				return false;
+			}
+		});
+		expandableListView.setOnChildClickListener(new OnChildClickListener() {
+
+			@Override
+			public boolean onChildClick(ExpandableListView parent, View v, int groupPosition, int childPosition, long id) {
+				return false;
+			}
+		});
+		expandableListView.setOnGroupCollapseListener(new OnGroupCollapseListener() {
+
+			@Override
+			public void onGroupCollapse(int groupPosition) {
+
+			}
+		});
+		expandableListView.setOnGroupExpandListener(new OnGroupExpandListener() {
+
+			@Override
+			public void onGroupExpand(int groupPosition) {
+
+			}
+		});
 	}
 
 	@Override

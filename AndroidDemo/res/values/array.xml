@@ -17,9 +17,10 @@
         <item>日期和时间选择器</item>
         <item>Dialog</item>
         <item>AutoCompelete TextView</item>
-        <item>SeekBar</item>
+        <item>SeekBar，树型结构</item>
         <item>图片选择预览</item>
         <item>菜单</item>
+        <item>SlidingDrawer</item>
     </string-array>
 
     <!-- ******************************************brief************************************ -->
@@ -42,6 +43,7 @@
         <item>基本使用，实现图片切换，亮度调节</item>
         <item>使用了Gallery和ImageViewSwitcher</item>
         <item>三种菜单形式</item>
+        <item>一种抽屉型组件, 已不推荐使用</item>
     </string-array>
 
     <!-- ********************************others**************************************************** -->

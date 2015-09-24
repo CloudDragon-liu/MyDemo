@@ -50,6 +50,7 @@
         <activity android:name="com.liuyunlong.androiddemo.activity.SeekBarActivity" />
         <activity android:name="com.liuyunlong.androiddemo.activity.GalleryActivity" />
         <activity android:name="com.liuyunlong.androiddemo.activity.MenuActivity" />
+        <activity android:name="com.liuyunlong.androiddemo.activity.SlidingDrawerActivity" />
     </application>
 
 </manifest>
