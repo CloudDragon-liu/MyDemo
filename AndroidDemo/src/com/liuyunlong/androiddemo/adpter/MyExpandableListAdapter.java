@@ -68,12 +68,12 @@ public class MyExpandableListAdapter extends BaseExpandableListAdapter {
 	}
 
 	private TextView buildTextView() {
-		AbsListView.LayoutParams params = new AbsListView.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, 35);
+		AbsListView.LayoutParams params = new AbsListView.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, 80);
 		TextView textView = new TextView(this.mContext);
 		textView.setLayoutParams(params);
 		textView.setTextSize(15.0f);
 		textView.setGravity(Gravity.LEFT); // 左对齐
-		textView.setPadding(40, 8, 3, 3);
+		textView.setPadding(40, 18, 13, 13);
 		return textView;
 	}
 

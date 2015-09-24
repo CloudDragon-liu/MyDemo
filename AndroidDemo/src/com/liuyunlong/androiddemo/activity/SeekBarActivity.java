@@ -56,7 +56,10 @@ public class SeekBarActivity extends Activity implements OnSeekBarChangeListener
 		textBar.setOnSeekBarChangeListener(this);
 		imgBar.setOnSeekBarChangeListener(this);
 		lightBar.setOnSeekBarChangeListener(this);
+		
+		
 		/*******************************ExpandableListView**************/
+		
 		expandableListView = (ExpandableListView) this.findViewById(R.id.expandableListView1);
 		adapter = new MyExpandableListAdapter(this, null, null);
 		expandableListView.setAdapter(adapter);
