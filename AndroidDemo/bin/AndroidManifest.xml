@@ -48,6 +48,8 @@
         <activity android:name="com.liuyunlong.androiddemo.activity.DialogActivity" />
         <activity android:name="com.liuyunlong.androiddemo.activity.AutoCompeleteActivity" />
         <activity android:name="com.liuyunlong.androiddemo.activity.SeekBarActivity" />
+        <activity android:name="com.liuyunlong.androiddemo.activity.GalleryActivity" />
+        <activity android:name="com.liuyunlong.androiddemo.activity.MenuActivity" />
     </application>
 
 </manifest>

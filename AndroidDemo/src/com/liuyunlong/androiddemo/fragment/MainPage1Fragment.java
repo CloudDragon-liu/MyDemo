@@ -28,9 +28,11 @@ import com.liuyunlong.androiddemo.activity.DialogActivity;
 import com.liuyunlong.androiddemo.activity.FragmentBaseItemActivity;
 import com.liuyunlong.androiddemo.activity.FragmentPagerAdapterTabActivity;
 import com.liuyunlong.androiddemo.activity.FragmentTabItemActivity;
+import com.liuyunlong.androiddemo.activity.GalleryActivity;
 import com.liuyunlong.androiddemo.activity.GestureActivity;
 import com.liuyunlong.androiddemo.activity.HandlerItemActivity;
 import com.liuyunlong.androiddemo.activity.MainTabActivity;
+import com.liuyunlong.androiddemo.activity.MenuActivity;
 import com.liuyunlong.androiddemo.activity.SeekBarActivity;
 import com.liuyunlong.androiddemo.activity.SpinnerActivity;
 import com.liuyunlong.androiddemo.activity.ViewPagerItemActivity;
@@ -193,6 +195,16 @@ public class MainPage1Fragment extends Fragment implements OnItemClickListener, 
 			break;
 		case ConstantUtils.NUMBER.FOURTEEN: // seekbar
 			intent.setClass(mContext, SeekBarActivity.class);
+			intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+			startActivity(intent);
+			break;
+		case ConstantUtils.NUMBER.FIFTEEN: // Gallery
+			intent.setClass(mContext, GalleryActivity.class);
+			intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+			startActivity(intent);
+			break;
+		case ConstantUtils.NUMBER.SIXTEEN: // Menu
+			intent.setClass(mContext, MenuActivity.class);
 			intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
 			startActivity(intent);
 			break;

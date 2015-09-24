@@ -40,4 +40,11 @@
             android:layout_weight="1" />
     </LinearLayout>
 
+    <Button
+        android:id="@+id/toast_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="doClick"
+        android:text="自定义Toast" />
+
 </LinearLayout>

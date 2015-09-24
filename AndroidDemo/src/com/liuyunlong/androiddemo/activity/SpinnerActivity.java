@@ -4,13 +4,18 @@ import com.liuyunlong.androiddemo.R;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.view.Gravity;
 import android.view.View;
 import android.view.Window;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemSelectedListener;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
 /** 
 * @author  : liuyunlong
@@ -22,9 +27,11 @@ public class SpinnerActivity extends Activity {
 
 	private Spinner mSpinnerProvince, mSpinnerCity;
 
-	ArrayAdapter<CharSequence> provinceAdapter, cityAdapter;
+	private ArrayAdapter<CharSequence> provinceAdapter, cityAdapter;
 
 	private String[][] area;
+
+	private Button button;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -83,5 +90,22 @@ public class SpinnerActivity extends Activity {
 
 			}
 		});
+	}
+
+	public void doClick(View v) {
+		switch (v.getId()) {
+		case R.id.toast_btn: // 不直接使用toast的setview方法是因为会覆盖文字
+			Toast toast = Toast.makeText(this, "自定义Toast", Toast.LENGTH_SHORT);
+			toast.setGravity(Gravity.CENTER, 0, 0); // 设置对齐方式
+			LinearLayout view = (LinearLayout) toast.getView(); // 获取Toast的view对象
+			ImageView imageView = new ImageView(this);
+			imageView.setImageResource(R.drawable.daughter);
+			view.addView(imageView, 0);
+			toast.show();
+			break;
+
+		default:
+			break;
+		}
 	}
 }
