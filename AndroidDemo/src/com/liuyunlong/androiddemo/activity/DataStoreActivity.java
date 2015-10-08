@@ -3,7 +3,6 @@ package com.liuyunlong.androiddemo.activity;
 import java.util.ArrayList;
 import java.util.List;
 
-import android.app.Activity;
 import android.content.Context;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
@@ -12,9 +11,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.Window;
 import android.widget.ImageView;
-import android.widget.TextView;
 import android.widget.TabHost.OnTabChangeListener;
 import android.widget.TabHost.TabSpec;
+import android.widget.TextView;
 
 import com.liuyunlong.androiddemo.R;
 import com.liuyunlong.androiddemo.fragment.FragmentDataStore1;

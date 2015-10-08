@@ -25,6 +25,7 @@ import com.liuyunlong.androiddemo.activity.AutoCompeleteActivity;
 import com.liuyunlong.androiddemo.activity.DataStoreActivity;
 import com.liuyunlong.androiddemo.activity.DataTimePickerActivity;
 import com.liuyunlong.androiddemo.activity.DialogActivity;
+import com.liuyunlong.androiddemo.activity.FileOperatorActivity;
 import com.liuyunlong.androiddemo.activity.FragmentBaseItemActivity;
 import com.liuyunlong.androiddemo.activity.FragmentPagerAdapterTabActivity;
 import com.liuyunlong.androiddemo.activity.FragmentTabItemActivity;
@@ -211,6 +212,11 @@ public class MainPage1Fragment extends Fragment implements OnItemClickListener, 
 			break;
 		case ConstantUtils.NUMBER.SEVENTEEN: // slidingDrawer
 			intent.setClass(mContext, SlidingDrawerActivity.class);
+			intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+			startActivity(intent);
+			break;
+		case ConstantUtils.NUMBER.EIGHTEEN: // 文件操作
+			intent.setClass(mContext, FileOperatorActivity.class);
 			intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
 			startActivity(intent);
 			break;

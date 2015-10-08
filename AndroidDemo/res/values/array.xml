@@ -21,6 +21,7 @@
         <item>图片选择预览</item>
         <item>菜单</item>
         <item>SlidingDrawer</item>
+        <item>文件操作</item>
     </string-array>
 
     <!-- ******************************************brief************************************ -->
@@ -44,6 +45,7 @@
         <item>使用了Gallery和ImageViewSwitcher</item>
         <item>三种菜单形式</item>
         <item>一种抽屉型组件, 已不推荐使用</item>
+        <item>DOM, SAX,XMLPull,JSON</item>
     </string-array>
 
     <!-- ********************************others**************************************************** -->

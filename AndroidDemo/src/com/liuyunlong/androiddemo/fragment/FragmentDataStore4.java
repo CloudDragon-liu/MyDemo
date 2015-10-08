@@ -1,15 +1,21 @@
 package com.liuyunlong.androiddemo.fragment;
 
 import java.io.ByteArrayOutputStream;
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.PrintStream;
+import java.util.Scanner;
 
 import com.liuyunlong.androiddemo.R;
+import com.liuyunlong.androiddemo.utils.ConstantUtils;
 import com.liuyunlong.androiddemo.utils.Logger;
 
 import android.content.Context;
 import android.os.Bundle;
+import android.os.Environment;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -70,7 +76,7 @@ public class FragmentDataStore4 extends Fragment implements OnClickListener {
 	}
 
 	/**
-	 * 保存文件，如果文件不存在，自动创建，默认路径为data目录下
+	 * 保存文件，如果文件不存在，自动创建，默认路径为data/data/命名/文件名
 	 * @param content
 	 * @author liuyunlong
 	 * @date 2015-9-21上午10:36:59
@@ -116,8 +122,11 @@ public class FragmentDataStore4 extends Fragment implements OnClickListener {
 		switch (v.getId()) {
 		case R.id.file_read_write_btn:
 			String editContenString = mEditText.getText().toString();
+			// 1. Activity提供的操作文件的方法，文件保存在手机的存储空间（data/data/包名/files）
 			write2file(editContenString);
 			mShowTv.setText(readFiles());
+			// 2. 使用JavaIO操作文件，文件保存在sdcard
+			file2sdcard();
 			break;
 		case R.id.file_store_iv:
 			if (mBriefTv.getVisibility() == View.VISIBLE) {
@@ -129,6 +138,33 @@ public class FragmentDataStore4 extends Fragment implements OnClickListener {
 
 		default:
 			break;
+		}
+	}
+
+	private void file2sdcard() {
+		if (Environment.getExternalStorageState().equals(Environment.MEDIA_MOUNTED)) {
+			File file = new File(Environment.getExternalStorageDirectory().toString() + File.separator + ConstantUtils.FILE_DIR.DIR + File.separator
+					+ ConstantUtils.FILE_DIR.FILE_NAME_JAVA_IO);
+			if (!file.getParentFile().exists()) {
+				file.getParentFile().mkdirs();
+			}
+			PrintStream out = null;
+			try {
+				out = new PrintStream(new FileOutputStream(file, false)); // 非追加写入
+				out.println("测试Javaio");
+			} catch (Exception e) {
+				e.printStackTrace();
+			} finally {
+				if (null != out) {
+					try {
+						out.close();
+					} catch (Exception e) {
+						e.printStackTrace();
+					}
+				}
+			}
+		} else {
+			Logger.showToast(mContext, "不存在sdcard卡");
 		}
 	}
 }

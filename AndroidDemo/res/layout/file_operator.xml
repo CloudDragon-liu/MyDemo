@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <Button
+        android:id="@+id/file_dom_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="doClick"
+        android:text="DOM解析xml文件" />
+
+    <TextView
+        android:id="@+id/file_dom_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <Button
+        android:id="@+id/file_sax_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="doClick"
+        android:text="SAX" />
+
+    <TextView
+        android:id="@+id/file_sax_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <Button
+        android:id="@+id/file_xmlpull_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="doClick"
+        android:text="XMLPull" />
+
+    <TextView
+        android:id="@+id/file_xmlpull_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <Button
+        android:id="@+id/file_json_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="doClick"
+        android:text="JSON" />
+
+    <TextView
+        android:id="@+id/file_json_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <Button
+        android:id="@+id/file_resource_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="doClick"
+        android:text="操作资源文件" />
+
+    <TextView
+        android:id="@+id/file_resource_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+</LinearLayout>

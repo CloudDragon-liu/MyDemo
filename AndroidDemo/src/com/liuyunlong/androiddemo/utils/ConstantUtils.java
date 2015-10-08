@@ -44,6 +44,11 @@ public class ConstantUtils {
 		public static final int WITH_EDITTEXT_PROGRESSBAR = 5;
 	}
 
+	public static class FILE_DIR {
+		public static final String FILE_NAME_JAVA_IO = "javaio.txt";
+		public static final String DIR = "files";
+	}
+
 	/**
 	 * handler消息
 	 * @author liuyunlong

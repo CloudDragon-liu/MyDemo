@@ -57,7 +57,11 @@ public class FragmentDataStore1 extends Fragment implements OnClickListener {
 	public void onClick(View v) {
 		switch (v.getId()) {
 		case R.id.shared_text_with_icon:
-			mBriefText.setVisibility(View.VISIBLE);
+			if (null != mBriefText && mBriefText.getVisibility() == View.VISIBLE) {
+				mBriefText.setVisibility(View.GONE);
+			} else {
+				mBriefText.setVisibility(View.VISIBLE);
+			}
 			SharedPreferencesDemo();
 			break;
 
@@ -70,7 +74,10 @@ public class FragmentDataStore1 extends Fragment implements OnClickListener {
 		// 第二个参数为文件的模式：只读，是否其他应用可访问等
 		SharedPreferences spf = mContext.getSharedPreferences("mySp", mContext.MODE_PRIVATE);
 		Editor editor = spf.edit();
-		editor.putString("name", "liuyunlong");
+
+		if (!spf.contains("name")) { // 判断是否已经存在key
+			editor.putString("name", "刘云龙");
+		}
 		editor.putInt("age", 27);
 		editor.putLong("time", System.currentTimeMillis());
 		editor.putBoolean("default", true);

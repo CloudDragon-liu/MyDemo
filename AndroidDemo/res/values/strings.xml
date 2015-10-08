@@ -56,8 +56,14 @@
         3. 以B-Tree的数据结构形式存储在磁盘\n\n
         支持数据类型：\n
         null, integer, real(布尔型), text(字符串),blob(二进制)\n	</string>
-    <string name="file_store_brief_text">        1. file存储路径包括内置（data/data目录）和scdard（目录），如果是要使用外置目录，需要配置外置文件目录的访问权限\n
-        2. 待续。。。	</string>
+    <string name="file_store_brief_text">        1. Android中对文件的存储操作有两种方法：\n
+        1.1 直接利用Activity提供的操作文件的方法，文件存储在手机存储空间(文件保存的路径为data/data/包名/文件名)\n
+        	读：openFileOutout\n
+        	写：openFileInput\n
+        1.2 利用JavaIO流操作，文件存储在sdcard\n\n
+        	首先需要开通权限：write_external_storage\n
+        2. file存储路径包括内置（data/data目录）和scdard（目录），如果是要使用外置目录，需要配置外置文件目录的访问权限\n
+        3. 待续。。。	</string>
     <string name="content_provider_brief_text">        1. 应用程序之间的数据共享\n
         2. 如何实现：\n
        		 2.1 继承抽象类ContentProvider实现一系列对数据的增删改查\n
