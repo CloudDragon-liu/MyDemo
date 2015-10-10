@@ -121,6 +121,7 @@ public class MainPage1Fragment extends Fragment implements OnItemClickListener, 
 		mHeadTextView = (TextView) view.findViewById(R.id.fragment_layout_top_tv);
 		mHeadTextView.setText(getResources().getStringArray(R.array.main_tab_text)[0]);
 		mTopLeftIcon = (ImageView) view.findViewById(R.id.top_left_img);
+
 		mTopRightIcon = (ImageView) view.findViewById(R.id.top_right_1_img);
 		mTopRightIcon.setVisibility(View.VISIBLE);
 		mTopLeftIcon.setOnClickListener(this);
@@ -140,7 +141,7 @@ public class MainPage1Fragment extends Fragment implements OnItemClickListener, 
 	@Override
 	public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 		Intent intent = new Intent();
-		switch (position) {
+		switch (position - 1) {
 		case ConstantUtils.NUMBER.ZERO:
 			intent.setClass(mContext, HandlerItemActivity.class);
 			intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
@@ -264,9 +265,9 @@ public class MainPage1Fragment extends Fragment implements OnItemClickListener, 
 		mHandler.postDelayed(new Runnable() {
 			@Override
 			public void run() {
-				mainItems.clear();
-				initData();
-				listView.setAdapter(adapter);
+				// mainItems.clear();
+				// initData();
+				// listView.setAdapter(adapter);
 				onLoad();
 			}
 		}, 2000);
@@ -278,7 +279,7 @@ public class MainPage1Fragment extends Fragment implements OnItemClickListener, 
 		mHandler.postDelayed(new Runnable() {
 			@Override
 			public void run() {
-				initData();
+				// initData();
 				adapter.notifyDataSetChanged();
 				onLoad();
 			}
