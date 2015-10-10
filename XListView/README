@@ -1,6 +1,2 @@
-An ListView support "pull down refresh" and "pull up load" feature.
-
-How to use:
-    Just replace ListView by me.maxwin.XListView.
-
-Screenshots see the Wiki plz.
+ListView组件：支持下拉刷新+上拉加载更多
+使用：com.liuyunlong.androiddemo.widget.XListView替换listview
