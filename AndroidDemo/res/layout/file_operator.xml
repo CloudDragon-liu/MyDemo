@@ -16,6 +16,39 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
+
+        <EditText
+            android:id="@+id/dom_name_et"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:hint="输入姓名" />
+
+        <EditText
+            android:id="@+id/dom_email_et"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:hint="输入邮箱"
+            android:inputType="textEmailAddress" />
+
+        <Button
+            android:id="@+id/dom_save_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="doClick"
+            android:text="保存到xml文件中" />
+
+        <Button
+            android:id="@+id/dom_get_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="doClick"
+            android:text="从xml文件中获取内容" />
+    </LinearLayout>
+
     <Button
         android:id="@+id/file_sax_btn"
         android:layout_width="match_parent"

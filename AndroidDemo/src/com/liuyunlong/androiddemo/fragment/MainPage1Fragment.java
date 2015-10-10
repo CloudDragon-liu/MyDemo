@@ -7,6 +7,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -16,7 +17,6 @@ import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
-import android.widget.ListView;
 import android.widget.TextView;
 
 import com.liuyunlong.androiddemo.R;
@@ -42,12 +42,15 @@ import com.liuyunlong.androiddemo.adpter.MainListViewAdapter;
 import com.liuyunlong.androiddemo.entity.MainItem;
 import com.liuyunlong.androiddemo.utils.ConstantUtils;
 import com.liuyunlong.androiddemo.utils.Logger;
+import com.liuyunlong.androiddemo.utils.Utils;
+import com.liuyunlong.androiddemo.widget.XListView;
+import com.liuyunlong.androiddemo.widget.XListView.IXListViewListener;
 
 /** @author liuyunlong
   * @date 2015-9-15 下午11:52:46 
   * @version 1.0 
   */
-public class MainPage1Fragment extends Fragment implements OnItemClickListener, OnClickListener {
+public class MainPage1Fragment extends Fragment implements OnItemClickListener, OnClickListener, IXListViewListener {
 
 	private Context mContext;
 
@@ -55,7 +58,7 @@ public class MainPage1Fragment extends Fragment implements OnItemClickListener, 
 
 	private LinearLayout layout;
 
-	private ListView listView;
+	private XListView listView;
 
 	private List<MainItem> mainItems = new ArrayList<MainItem>();
 
@@ -64,6 +67,14 @@ public class MainPage1Fragment extends Fragment implements OnItemClickListener, 
 	private MainListViewAdapter adapter;
 
 	private ImageView mTopLeftIcon, mTopRightIcon;
+
+	private Handler mHandler = new Handler();
+
+	private String mRefreshTime;
+
+	private Integer mTotalNum;
+
+	private Integer mShowNum = 0;
 
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -114,9 +125,13 @@ public class MainPage1Fragment extends Fragment implements OnItemClickListener, 
 		mTopRightIcon.setVisibility(View.VISIBLE);
 		mTopLeftIcon.setOnClickListener(this);
 		mTopRightIcon.setOnClickListener(this);
-		listView = (ListView) view.findViewById(R.id.learn_rec_list);
+		listView = (XListView) view.findViewById(R.id.learn_rec_list);
 		listView.setAdapter(adapter);
 		listView.setOnItemClickListener(this);
+
+		listView.setPullLoadEnable(true);
+		listView.setXListViewListener(this);
+
 	}
 
 	/**
@@ -242,5 +257,38 @@ public class MainPage1Fragment extends Fragment implements OnItemClickListener, 
 		default:
 			break;
 		}
+	}
+
+	@Override
+	public void onRefresh() {
+		mHandler.postDelayed(new Runnable() {
+			@Override
+			public void run() {
+				mainItems.clear();
+				initData();
+				listView.setAdapter(adapter);
+				onLoad();
+			}
+		}, 2000);
+
+	}
+
+	@Override
+	public void onLoadMore() {
+		mHandler.postDelayed(new Runnable() {
+			@Override
+			public void run() {
+				initData();
+				adapter.notifyDataSetChanged();
+				onLoad();
+			}
+		}, 2000);
+	}
+
+	protected void onLoad() {
+		listView.stopRefresh();
+		listView.stopLoadMore();
+		mRefreshTime = Utils.getDateString();
+		listView.setRefreshTime(mRefreshTime);
 	}
 }
