@@ -22,7 +22,9 @@ import android.widget.TextView;
 import com.liuyunlong.androiddemo.R;
 import com.liuyunlong.androiddemo.utils.Logger;
 
-/** @author liuyunlong
+/**
+ * 个人收藏 
+ * @author liuyunlong
   * @date 2015-9-15 下午11:53:15 
   * @version 1.0 
   */

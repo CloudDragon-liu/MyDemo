@@ -73,6 +73,20 @@ public class ConstantUtils {
 
 	}
 
+	/**通话记录类型*/
+	public static class Dial extends TypeInfo {
+
+		public Dial(Integer type, String msg) {
+			super(type, msg);
+		}
+
+		public static final Dial OUT_GOING = new Dial(2, "拨出");
+
+		public static final Dial INCOMING = new Dial(1, "拨入");
+
+		public static final Dial MISSED = new Dial(3, "未接");
+	}
+
 	public static class TypeInfo {
 		private Integer type;
 

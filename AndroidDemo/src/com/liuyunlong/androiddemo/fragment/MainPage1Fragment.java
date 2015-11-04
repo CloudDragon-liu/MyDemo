@@ -21,6 +21,7 @@ import android.widget.TextView;
 
 import com.liuyunlong.androiddemo.R;
 import com.liuyunlong.androiddemo.activity.AndroidComponentsActivity;
+import com.liuyunlong.androiddemo.activity.AsyncTaskActivity;
 import com.liuyunlong.androiddemo.activity.AutoCompeleteActivity;
 import com.liuyunlong.androiddemo.activity.DataStoreActivity;
 import com.liuyunlong.androiddemo.activity.DataTimePickerActivity;
@@ -46,7 +47,9 @@ import com.liuyunlong.androiddemo.utils.Utils;
 import com.liuyunlong.androiddemo.widget.XListView;
 import com.liuyunlong.androiddemo.widget.XListView.IXListViewListener;
 
-/** @author liuyunlong
+/**
+ * 学习记录
+ *  @author liuyunlong
   * @date 2015-9-15 下午11:52:46 
   * @version 1.0 
   */
@@ -142,7 +145,7 @@ public class MainPage1Fragment extends Fragment implements OnItemClickListener, 
 	public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 		Intent intent = new Intent();
 		switch (position - 1) {
-		case ConstantUtils.NUMBER.ZERO:
+		case ConstantUtils.NUMBER.ZERO: // 定时任务
 			intent.setClass(mContext, HandlerItemActivity.class);
 			intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
 			startActivity(intent);
@@ -233,6 +236,11 @@ public class MainPage1Fragment extends Fragment implements OnItemClickListener, 
 			break;
 		case ConstantUtils.NUMBER.EIGHTEEN: // 文件操作
 			intent.setClass(mContext, FileOperatorActivity.class);
+			intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+			startActivity(intent);
+			break;
+		case ConstantUtils.NUMBER.NINETEEN: // AsyncTask
+			intent.setClass(mContext, AsyncTaskActivity.class);
 			intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
 			startActivity(intent);
 			break;

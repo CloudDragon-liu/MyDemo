@@ -1,22 +1,30 @@
 package com.liuyunlong.androiddemo.fragment;
 
 import com.liuyunlong.androiddemo.R;
+import com.liuyunlong.androiddemo.service.MyServiceUtil;
 import com.liuyunlong.androiddemo.utils.Logger;
 
 import android.app.ActivityManager;
+import android.content.ComponentName;
 import android.content.Context;
+import android.content.Intent;
+import android.content.ServiceConnection;
 import android.media.AudioManager;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.net.wifi.WifiManager;
 import android.os.Bundle;
+import android.os.IBinder;
+import android.os.RemoteException;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 
 /** 
 * @author  : liuyunlong
@@ -28,7 +36,28 @@ public class FragmentComponentService extends Fragment implements OnClickListene
 
 	private Context mContext;
 
-	private Button isNetBtn, isWifiBtn, volBtn, mPackageNameBtn;
+	private Button isNetBtn, isWifiBtn, volBtn, mPackageNameBtn, mStartBtn, mStopBtn, mBindBtn, mUnbindBtn;
+
+	private TextView mBriefTv;
+
+	private ImageView mIcon;
+
+	private ServiceConnection serviceConnection = new ServiceConnection() {
+
+		@Override
+		public void onServiceDisconnected(ComponentName name) { // 断开连接Service
+			Logger.showToast(mContext, "Service 连接失败");
+		}
+
+		@Override
+		public void onServiceConnected(ComponentName name, IBinder service) { // 连接到Service
+			try {
+				Logger.showToast(mContext, "连接Service成功，service = " + service.getInterfaceDescriptor());
+			} catch (RemoteException e) {
+				e.printStackTrace();
+			}
+		}
+	};
 
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -47,6 +76,16 @@ public class FragmentComponentService extends Fragment implements OnClickListene
 		mContext = getActivity();
 		// LayoutInflater inflater = (LayoutInflater)
 		// mContext.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+		mIcon = (ImageView) view.findViewById(R.id.component_service_icon);
+		mIcon.setOnClickListener(this);
+		mStartBtn = (Button) view.findViewById(R.id.start_service_btn);
+		mStartBtn.setOnClickListener(this);
+		mStopBtn = (Button) view.findViewById(R.id.stop_service_btn);
+		mStopBtn.setOnClickListener(this);
+		mBindBtn = (Button) view.findViewById(R.id.bind_service_btn);
+		mBindBtn.setOnClickListener(this);
+		mUnbindBtn = (Button) view.findViewById(R.id.unbind_service_btn);
+		mUnbindBtn.setOnClickListener(this);
 		isNetBtn = (Button) view.findViewById(R.id.is_net_btn);
 		isNetBtn.setOnClickListener(this);
 		isWifiBtn = (Button) view.findViewById(R.id.is_wifi_on);
@@ -55,6 +94,7 @@ public class FragmentComponentService extends Fragment implements OnClickListene
 		volBtn.setOnClickListener(this);
 		mPackageNameBtn = (Button) view.findViewById(R.id.package_name);
 		mPackageNameBtn.setOnClickListener(this);
+		mBriefTv = (TextView) view.findViewById(R.id.component_service_brief);
 	}
 
 	@Override
@@ -75,6 +115,25 @@ public class FragmentComponentService extends Fragment implements OnClickListene
 			break;
 		case R.id.package_name:
 			getCurrentPackageName(mContext);
+			break;
+		case R.id.component_service_icon:
+			mBriefTv.setVisibility(mBriefTv.getVisibility() == View.GONE ? View.VISIBLE : View.GONE);
+			mBriefTv.setText("1. 相当于一个没有界面的Acitivity。\n2. 当用户执行的操作需要进行跨进程访问时，"
+					+ "可以用service来完成。\n3. 一个Service启动后如果没有意外或者明确的调用stopService则一直驻留在手机内，如果希望随着Activity程序结束一起结束需要和Activity绑定在一起\n\n");
+			break;
+		case R.id.start_service_btn:
+			mContext.startService(new Intent(mContext, MyServiceUtil.class));
+			Logger.showToast(mContext, "onCreate -->> onStartCommand\n如果未销毁则只执行onStartCommand");
+			break;
+		case R.id.stop_service_btn:
+			mContext.stopService(new Intent(mContext, MyServiceUtil.class));
+			Logger.showToast(mContext, "onDestory\n如果已经销毁则不再执行！");
+			break;
+		case R.id.bind_service_btn:
+			mContext.bindService(new Intent(mContext, MyServiceUtil.class), serviceConnection, Context.BIND_AUTO_CREATE);
+			break;
+		case R.id.unbind_service_btn:
+			mContext.unbindService(serviceConnection);
 			break;
 
 		default:

@@ -82,5 +82,6 @@
        	UriMatch类 \n
        	ContentResolver操作ContentProvider中的数据\n
        	自定义ContentProvider比较麻烦，一般也不需要，只需要能够访问其他的ContentProvider即可</string>
+    <string name="activity_brief">1. 如果activity执行的finish()方法，则不会不压入栈\n</string>
 
 </resources>

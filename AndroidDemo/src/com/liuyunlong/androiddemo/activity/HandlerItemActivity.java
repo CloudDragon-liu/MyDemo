@@ -1,12 +1,14 @@
 package com.liuyunlong.androiddemo.activity;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.View;
 import android.widget.Button;
 
 import com.liuyunlong.androiddemo.R;
+import com.liuyunlong.androiddemo.service.MyServiceUtil;
 
 /** 
 * @author  : liuyunlong
@@ -45,6 +47,12 @@ public class HandlerItemActivity extends Activity {
 		case R.id.handler_begin_btn:
 			count = 0;
 			mHandler.postDelayed(runnable, 1000); // 启动
+			break;
+		case R.id.start_service:
+			startService(new Intent(this, MyServiceUtil.class));
+			break;
+		case R.id.stop_service:
+			stopService(new Intent(this, MyServiceUtil.class));
 			break;
 
 		default:

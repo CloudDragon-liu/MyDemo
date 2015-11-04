@@ -22,6 +22,7 @@
         <item>菜单</item>
         <item>SlidingDrawer</item>
         <item>文件操作</item>
+        <item>AsyncTask</item>
     </string-array>
 
     <!-- ******************************************brief************************************ -->
@@ -46,6 +47,7 @@
         <item>三种菜单形式</item>
         <item>一种抽屉型组件, 已不推荐使用</item>
         <item>DOM, SAX,XMLPull,JSON</item>
+        <item>异步操作类，完成非阻塞任务</item>
     </string-array>
 
     <!-- ********************************others**************************************************** -->
@@ -63,6 +65,7 @@
         <item>File</item>
     </string-array>
     <string-array name="components_tab_text">
+        <item>Intent</item>
         <item>Activity</item>
         <item>Service</item>
         <item>Content Provider</item>

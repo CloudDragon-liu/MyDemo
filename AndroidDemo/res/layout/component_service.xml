@@ -5,7 +5,7 @@
     android:orientation="vertical" >
 
     <com.liuyunlong.androiddemo.widget.RoundImageView
-        android:id="@+id/component_activity_icon"
+        android:id="@+id/component_service_icon"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
@@ -13,11 +13,17 @@
         android:src="@drawable/daughter" />
 
     <TextView
-        android:id="@+id/component_activity_title"
+        android:id="@+id/component_service_title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center_horizontal"
         android:text="简单介绍" />
+
+    <TextView
+        android:id="@+id/component_service_brief"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone" />
 
     <TextView
         android:id="@+id/textView1"
@@ -28,18 +34,18 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal" >
+        android:orientation="vertical" >
 
         <Button
             android:id="@+id/is_net_btn"
-            android:layout_width="0dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="is联网" />
 
         <Button
             android:id="@+id/is_wifi_on"
-            android:layout_width="0dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:singleLine="true"
@@ -47,7 +53,7 @@
 
         <Button
             android:id="@+id/vol_btn"
-            android:layout_width="0dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:singleLine="true"
@@ -55,7 +61,7 @@
 
         <Button
             android:id="@+id/package_name"
-            android:layout_width="0dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:singleLine="true"
@@ -67,5 +73,29 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="" />
+
+    <Button
+        android:id="@+id/start_service_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="启动服务" />
+
+    <Button
+        android:id="@+id/stop_service_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="停止服务" />
+
+    <Button
+        android:id="@+id/bind_service_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="绑定服务" />
+
+    <Button
+        android:id="@+id/unbind_service_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="解绑服务" />
 
 </LinearLayout>

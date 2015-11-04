@@ -7,6 +7,7 @@ import com.liuyunlong.androiddemo.R;
 import com.liuyunlong.androiddemo.fragment.FragmentComponentActivity;
 import com.liuyunlong.androiddemo.fragment.FragmentComponentBroadCast;
 import com.liuyunlong.androiddemo.fragment.FragmentComponentContentProvider;
+import com.liuyunlong.androiddemo.fragment.FragmentComponentIntent;
 import com.liuyunlong.androiddemo.fragment.FragmentComponentService;
 
 import android.content.Context;
@@ -32,7 +33,7 @@ public class AndroidComponentsActivity extends FragmentActivity {
 
 	private FragmentTabHost tabHost;
 
-	private int[] tabImgArray = { R.drawable.tab_1_selector, R.drawable.tab_2_selector, R.drawable.tab_3_selector, R.drawable.tab_4_selector };
+	private int[] tabImgArray = { R.drawable.tab_1_selector, R.drawable.tab_1_selector, R.drawable.tab_2_selector, R.drawable.tab_3_selector, R.drawable.tab_4_selector };
 
 	private String[] tabTextArray;
 
@@ -92,6 +93,7 @@ public class AndroidComponentsActivity extends FragmentActivity {
 
 	private void initData() {
 		tabTextArray = getResources().getStringArray(R.array.components_tab_text);
+		fragments.add(FragmentComponentIntent.class);
 		fragments.add(FragmentComponentActivity.class);
 		fragments.add(FragmentComponentService.class);
 		fragments.add(FragmentComponentContentProvider.class);

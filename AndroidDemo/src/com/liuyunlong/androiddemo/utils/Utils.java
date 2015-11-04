@@ -55,4 +55,30 @@ public class Utils {
 		String str = year + "-" + month + "-" + day;
 		return str;
 	}
+
+	/**
+	 * 返回通话记录类型
+	 * @param type
+	 * @return
+	 * @author liuyunlong
+	 * @date 2015-10-12上午10:46:26
+	 */
+	public static String getDialType(String type) {
+		String string = null;
+		switch (Integer.parseInt(type)) {
+		case 1:
+			string = ConstantUtils.Dial.INCOMING.getMsg();
+			break;
+		case 2:
+			string = ConstantUtils.Dial.OUT_GOING.getMsg();
+			break;
+		case 3:
+			string = ConstantUtils.Dial.MISSED.getMsg();
+			break;
+
+		default:
+			break;
+		}
+		return string;
+	}
 }

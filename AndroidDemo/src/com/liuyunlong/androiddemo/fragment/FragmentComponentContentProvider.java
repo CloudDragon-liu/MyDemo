@@ -1,8 +1,11 @@
 package com.liuyunlong.androiddemo.fragment;
 
 import com.liuyunlong.androiddemo.R;
+import com.liuyunlong.androiddemo.utils.ConstantUtils;
 import com.liuyunlong.androiddemo.utils.Logger;
+import com.liuyunlong.androiddemo.utils.Utils;
 
+import android.R.integer;
 import android.content.ContentResolver;
 import android.content.ContentUris;
 import android.content.ContentValues;
@@ -10,6 +13,7 @@ import android.content.Context;
 import android.database.Cursor;
 import android.net.Uri;
 import android.os.Bundle;
+import android.provider.CallLog;
 import android.provider.ContactsContract;
 import android.provider.ContactsContract.CommonDataKinds.Email;
 import android.provider.ContactsContract.CommonDataKinds.Phone;
@@ -39,9 +43,9 @@ public class FragmentComponentContentProvider extends Fragment implements OnClic
 
 	private ImageView mIcon;
 
-	private TextView mTitleTv, mBriefTv, mResult;
+	private TextView mTitleTv, mBriefTv, mResult, mDialTv;
 
-	private Button mQueryBtn, mAddBtn;
+	private Button mQueryBtn, mAddBtn, mDialBtn;
 
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -66,6 +70,10 @@ public class FragmentComponentContentProvider extends Fragment implements OnClic
 		mAddBtn.setOnClickListener(this);
 		mQueryBtn.setOnClickListener(this);
 		mResult = (TextView) view.findViewById(R.id.result);
+		mDialBtn = (Button) view.findViewById(R.id.dial_record_btn);
+		mDialBtn.setOnClickListener(this);
+		mDialTv = (TextView) view.findViewById(R.id.dial_record_tv);
+
 	}
 
 	@Override
@@ -84,10 +92,46 @@ public class FragmentComponentContentProvider extends Fragment implements OnClic
 		case R.id.add_btn:
 			addContacts();
 			break;
+		case R.id.dial_record_btn:
+			getDialogRecords();
+			break;
 
 		default:
 			break;
 		}
+	}
+
+	/**
+	 * 获取通话记录
+	 * 
+	 * @author liuyunlong
+	 * @date 2015-10-12上午9:58:47
+	 */
+	private void getDialogRecords() {
+		ContentResolver resolver = mContext.getContentResolver();
+		Uri uri = CallLog.Calls.CONTENT_URI;
+		String[] projection = { CallLog.Calls._ID, CallLog.Calls.NUMBER, CallLog.Calls.CACHED_NAME, CallLog.Calls.TYPE, CallLog.Calls.DURATION };
+		Cursor cursor = resolver.query(uri, projection, null, null, null);
+		int id = 0;
+		String phoneStr;
+		String nameStr;
+		String phoneType;
+		String time;
+		String resultString = "";
+		if (null != cursor) {
+			while (cursor.moveToNext()) {
+				id = cursor.getInt(cursor.getColumnIndex(CallLog.Calls._ID));
+				phoneStr = cursor.getString(cursor.getColumnIndex(CallLog.Calls.NUMBER));
+				nameStr = cursor.getString(cursor.getColumnIndex(CallLog.Calls.CACHED_NAME));
+				phoneType = cursor.getString(cursor.getColumnIndex(CallLog.Calls.TYPE));
+				time = cursor.getString(cursor.getColumnIndex(CallLog.Calls.DURATION));
+				resultString += "id：" + id + "\n" + "号码为：" + phoneStr + "\n" + "姓名为：" + ((nameStr == null) ? "未知" : nameStr) + "\n" + "类型为：" + Utils.getDialType(phoneType) + "\n"
+						+ "通话时间为：" + time + "\n";
+			}
+			cursor.close();
+		}
+		mDialTv.setText(resultString);
+		
 	}
 
 	/**

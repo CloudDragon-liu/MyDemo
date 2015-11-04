@@ -52,4 +52,16 @@
         android:layout_height="wrap_content"
         android:text="" />
 
+    <Button
+        android:id="@+id/dial_record_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="获取通话记录" />
+
+    <TextView
+        android:id="@+id/dial_record_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="1" />
+
 </LinearLayout>

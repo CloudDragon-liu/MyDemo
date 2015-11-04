@@ -19,4 +19,39 @@
         android:gravity="center_horizontal"
         android:text="TextView" />
 
+    <Button
+        android:id="@+id/broadcast_static_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="静态注册" />
+
+    <Button
+        android:id="@+id/broadcast_dynamic_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="动态注册" />
+
+    <TimePicker
+        android:id="@+id/aclock_picker"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/aclock_tip_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="当前还未设置闹钟" />
+
+    <Button
+        android:id="@+id/set_aclock_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="设置闹钟" />
+
+    <Button
+        android:id="@+id/cancle_aclock_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="取消闹钟" />
+
 </LinearLayout>

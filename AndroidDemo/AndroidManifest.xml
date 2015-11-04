@@ -14,6 +14,10 @@
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
     <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_CALL_LOG" />
+    <uses-permission android:name="android.permission.WRITE_CALL_LOG" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+    <uses-permission android:name="android.permission.GET_TASKS" />
 
     <application
         android:allowBackup="true"
@@ -52,6 +56,17 @@
         <activity android:name="com.liuyunlong.androiddemo.activity.MenuActivity" />
         <activity android:name="com.liuyunlong.androiddemo.activity.SlidingDrawerActivity" />
         <activity android:name="com.liuyunlong.androiddemo.activity.FileOperatorActivity" />
+        <activity android:name="com.liuyunlong.androiddemo.activity.AsyncTaskActivity" />
+
+        <service android:name="com.liuyunlong.androiddemo.service.MyServiceUtil" />
+
+        <receiver
+            android:name="com.liuyunlong.androiddemo.broadcastreceiver.MyBroadCastReceiver"
+            android:enabled="true" >
+            <intent-filter>
+                <action android:name="broadcast_action_static" />
+            </intent-filter>
+        </receiver>
     </application>
 
 </manifest>
