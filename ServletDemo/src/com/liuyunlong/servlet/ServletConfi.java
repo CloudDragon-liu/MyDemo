@@ -1,4 +1,4 @@
-package com.liuyunlong.servlet;
+﻿package com.liuyunlong.servlet;
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -10,8 +10,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * @author liuyunlong
- * @version 2015年11月2日 下午1:55:20
+ * 
+ * @author samsung
+ *
  */
 public class ServletConfi extends HttpServlet {
 
@@ -22,10 +23,8 @@ public class ServletConfi extends HttpServlet {
 		response.setContentType("text/html;charset=UTF-8");
 		PrintWriter writer = response.getWriter();
 
-		// 得到指定的
 		String username = this.getServletConfig().getInitParameter("username");
 
-		// 得到所有的
 		Enumeration<String> enumeration = this.getServletConfig().getInitParameterNames();
 		while (enumeration.hasMoreElements()) {
 			String string = (String) enumeration.nextElement();
