@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_horizontal"
+    android:orientation="vertical" >
+
+    <Button
+        android:id="@+id/intent_net_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="doClick"
+        android:text="打开网页" />
+
+    <EditText
+        android:id="@+id/intent_dial_et"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="请输入电话号码" >
+    </EditText>
+
+    <Button
+        android:id="@+id/intent_dial_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="doClick"
+        android:text="拨打电话" />
+
+    <EditText
+        android:id="@+id/intent_msg_num"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="请输入接收人" >
+    </EditText>
+
+    <EditText
+        android:id="@+id/intent_msg_content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="请输入短信内容" />
+
+    <Button
+        android:id="@+id/intent_send_msg_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="发送短信" />
+
+    <Button
+        android:id="@+id/thread_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="线程交互" />
+
+    <AnalogClock
+        android:id="@+id/intent_analogClock"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/intent_analogClock_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="" />
+
+    <TextView
+        android:id="@+id/pending_intent_tv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="PendingIntent表示当前Activity不立即使用此intent，而是封装传给其他Activity，其他Activity在需要使用此intent时才进行操作" />
+
+</LinearLayout>

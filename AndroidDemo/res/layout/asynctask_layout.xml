@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <Button
+        android:id="@+id/async_task_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="简介" />
+
+    <TextView
+        android:id="@+id/async_task_brief_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:visibility="gone" />
+
+    <ProgressBar
+        android:id="@+id/async_task_progressBar"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/async_task_pro_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="" />
+
+    <Button
+        android:id="@+id/async_task_begin_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="开始" />
+
+</LinearLayout>
