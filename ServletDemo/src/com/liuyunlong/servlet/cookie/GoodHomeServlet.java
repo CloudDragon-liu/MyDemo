@@ -39,10 +39,14 @@ public class GoodHomeServlet extends HttpServlet {
 		writer.write("您已浏览过：<br />");
 		Cookie[] cookies = request.getCookies();
 		for (int i = 0; null != cookies && i < cookies.length; i++) {
-			if (cookies[i].getName().equals("id")) {
-				String id = cookies[i].getValue();
-				Book book = map.get(id);
-				writer.write(book.getName() + " " + book.getAuthor());
+			if (cookies[i].getName().equals("goodHistory")) {
+				String strs = cookies[i].getValue();
+				String[] ids = strs.split("\\,");
+				for (String id : ids) {
+
+					Book book = map.get(id);
+					writer.write(book.getName() + " : " + book.getAuthor() + "<br />");
+				}
 			}
 		}
 
