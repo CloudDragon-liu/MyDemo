@@ -25,9 +25,9 @@ public class CacheServlet extends HttpServlet {
 		// System.out.println("inininin");
 		// String str = "aaa";
 
-		response.sendRedirect("/ServletDemo/html/login.html");
-
-		// writer.write(str);
+		// response.sendRedirect("/ServletDemo/html/login.html");
+		String username = request.getParameter("username");
+		writer.print(username);
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
