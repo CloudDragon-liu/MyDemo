@@ -47,9 +47,6 @@ public class ServletContex extends HttpServlet {
 	}
 
 	private void readResourceByClassLoader() throws IOException {
-		UserDao userDao = new UserDao();
-		userDao.update();
-		userDao.select();
 	}
 
 	/**

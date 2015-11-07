@@ -1,20 +1,26 @@
 package com.liuyunlong.dao;
 
-import com.liuyunlong.utils.PropertyUtil;
+import com.liuyunlong.domain.User;
 
-/**
- * @author : liuyunlong
- * @version ：2015年11月2日 下午4:59:25
- */
-public class UserDao {
+/** 
+* @author  : liuyunlong
+* @version ：2015年11月7日 上午11:10:43 
+* */
+public interface UserDao {
 
-	public void update() {
+	/**
+	 * 增加用户
+	 * @param user
+	 * @version 2015年11月7日上午11:06:45
+	 */
+	public abstract void add(User user);
 
-		System.out.println(PropertyUtil.readResource("db.properties").getProperty("username"));
-	}
+	/**
+	 * 查询用户
+	 * @param user
+	 * @return
+	 * @version 2015年11月7日上午11:06:37
+	 */
+	public abstract User select(User user);
 
-	public void select() {
-		System.out.println(PropertyUtil.readResource("db.properties").getProperty("password"));
-
-	}
 }

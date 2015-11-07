@@ -1,6 +1,7 @@
 package com.liuyunlong.domain;
 
 import java.util.Arrays;
+import java.util.Date;
 
 /** 
 * @author  : liuyunlong
@@ -12,17 +13,13 @@ public class User {
 
 	private String password;
 
+	private String nickname;
+
+	private String email;
+
+	private Date birthday;
+
 	private Integer id;
-
-	private String city;
-
-	private String gender;
-
-	private String[] hobby;
-
-	private String brief;
-
-	private String icon;
 
 	public User() {
 	}
@@ -43,6 +40,30 @@ public class User {
 		this.password = password;
 	}
 
+	public String getNickname() {
+		return nickname;
+	}
+
+	public void setNickname(String nickname) {
+		this.nickname = nickname;
+	}
+
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+	public Date getBirthday() {
+		return birthday;
+	}
+
+	public void setBirthday(Date birthday) {
+		this.birthday = birthday;
+	}
+
 	public Integer getId() {
 		return id;
 	}
@@ -51,49 +72,9 @@ public class User {
 		this.id = id;
 	}
 
-	public String getCity() {
-		return city;
-	}
-
-	public void setCity(String city) {
-		this.city = city;
-	}
-
-	public String getGender() {
-		return gender;
-	}
-
-	public void setGender(String gender) {
-		this.gender = gender;
-	}
-
-	public String[] getHobby() {
-		return hobby;
-	}
-
-	public void setHobby(String[] hobby) {
-		this.hobby = hobby;
-	}
-
-	public String getBrief() {
-		return brief;
-	}
-
-	public void setBrief(String brief) {
-		this.brief = brief;
-	}
-
-	public String getIcon() {
-		return icon;
-	}
-
-	public void setIcon(String icon) {
-		this.icon = icon;
-	}
-
 	@Override
 	public String toString() {
-		return "User [username=" + username + ", password=" + password + ", id=" + id + ", city=" + city + ", gender=" + gender + ", hobby=" + Arrays.toString(hobby) + ", brief=" + brief + ", icon="
-				+ icon + "]";
+		return "User [username=" + username + ", password=" + password + ", nickname=" + nickname + ", email=" + email + ", birthday=" + birthday + ", id=" + id + "]";
 	}
+
 }
